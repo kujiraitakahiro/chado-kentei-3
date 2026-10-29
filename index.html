@@ -1,0 +1,2696 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>茶道文化検定3級 達人監修・百六十問道場（本番模試2回分収録）</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            washi: '#f8f5ee',
+            washiDark: '#efece4',
+            matcha: '#4a6b48',
+            matchaLight: '#5d825b',
+            matchaPale: '#e7efe5',
+            rikyu: '#535953',
+            sumi: '#2b2825',
+            kincha: '#b5924c',
+            kinchaPale: '#f7efe0',
+            shu: '#b54434',
+            shuPale: '#fbece9',
+            ai: '#2e4b63'
+          },
+          fontFamily: {
+            mincho: ['"Shippori Mincho"', 'serif'],
+            sans: ['"Noto Sans JP"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F8F5EE;
+      color: #2B2B28;
+      font-family: 'Noto Sans JP', sans-serif;
+      background-image: radial-gradient(#DED9CC 0.75px, transparent 0.75px);
+      background-size: 20px 20px;
+    }
+    .font-mincho {
+      font-family: 'Shippori Mincho', serif;
+    }
+    .japanese-border {
+      border: 1px solid #D6D0C2;
+      box-shadow: 0 4px 16px -4px rgba(43, 43, 40, 0.06);
+    }
+    .choice-btn {
+      transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .choice-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      border-color: #3B5D38;
+      background-color: #F3F7F2;
+    }
+    .fade-in {
+      animation: fadeIn 0.28s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #EFECE4;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #B9B3A5;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-sumi text-washi border-b-4 border-kincha sticky top-0 z-40 shadow-md">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="app.showView('dashboard')">
+        <div class="w-10 h-10 rounded-full bg-matcha flex items-center justify-center border border-kincha shadow-inner">
+          <span class="font-mincho text-lg font-bold text-washi">茶</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs tracking-widest text-kincha font-medium">茶道歴三十年 達人監修</span>
+            <span class="text-[11px] bg-matcha px-2 py-0.5 rounded text-washi">本番2回分・全160問収録</span>
+          </div>
+          <h1 class="font-mincho text-lg sm:text-xl font-bold tracking-wider">茶道文化検定3級 百六十問道場</h1>
+        </div>
+      </div>
+
+      <nav class="flex items-center gap-2 text-sm">
+        <button onclick="app.showView('dashboard')" id="nav-dashboard" class="px-3 py-1.5 rounded-md font-medium transition bg-matcha text-washi">
+          道場トップ
+        </button>
+        <button onclick="app.showView('dictionary')" id="nav-dictionary" class="px-3 py-1.5 rounded-md font-medium transition text-washi/80 hover:text-washi hover:bg-white/10">
+          百六十問事典・一覧
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-5xl w-full mx-auto px-4 py-6 sm:py-8">
+
+    <!-- ==================== DASHBOARD VIEW ==================== -->
+    <section id="view-dashboard" class="space-y-8 fade-in">
+
+      <!-- Master Greeting & Overall Stats -->
+      <div class="bg-white/95 backdrop-blur rounded-xl japanese-border p-5 sm:p-7 relative overflow-hidden">
+        <div class="absolute -right-8 -bottom-8 w-40 h-40 rounded-full bg-matchaPale/60 pointer-events-none"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center relative z-10">
+          
+          <div class="lg:col-span-5 space-y-2 border-b lg:border-b-0 lg:border-r border-stone-200 pb-4 lg:pb-0 lg:pr-6">
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-kinchaPale text-kincha text-xs font-bold">
+              <span>師範からの言葉</span>
+            </div>
+            <h2 class="font-mincho text-xl sm:text-2xl font-bold text-sumi leading-snug">
+              本番試験（80問）2回分の160問で、<br>合格への確かな実力を養いましょう。
+            </h2>
+            <p class="text-xs sm:text-sm text-rikyu leading-relaxed">
+              3級本試験は80分・80問で、70%（56問）以上の正答が合格基準です。第1回・第2回の本番模試（各80問）や分野別稽古で、茶の湯の知恵を隅々まで身につけてください。
+            </p>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="bg-washi rounded-lg p-3.5 border border-stone-200 text-center">
+              <div class="text-xs text-rikyu mb-1">解答済み</div>
+              <div class="font-mincho text-2xl sm:text-3xl font-bold text-sumi">
+                <span id="stat-answered">0</span><span class="text-sm font-normal text-rikyu">/160</span>
+              </div>
+              <div class="text-[11px] text-rikyu mt-1">進捗 <span id="stat-progress-pct">0%</span></div>
+            </div>
+
+            <div class="bg-matchaPale/60 rounded-lg p-3.5 border border-matcha/20 text-center">
+              <div class="text-xs text-matcha font-medium mb-1">正解数（習得）</div>
+              <div class="font-mincho text-2xl sm:text-3xl font-bold text-matcha">
+                <span id="stat-correct">0</span><span class="text-sm font-normal">問</span>
+              </div>
+              <div class="text-[11px] text-matcha mt-1">正答率 <span id="stat-accuracy">0%</span></div>
+            </div>
+
+            <div class="bg-shuPale/60 rounded-lg p-3.5 border border-shu/20 text-center">
+              <div class="text-xs text-shu font-medium mb-1">誤答（未克服）</div>
+              <div class="font-mincho text-2xl sm:text-3xl font-bold text-shu">
+                <span id="stat-wrong">0</span><span class="text-sm font-normal">問</span>
+              </div>
+              <div class="text-[11px] text-shu mt-1">復習対象</div>
+            </div>
+
+            <div class="bg-kinchaPale/60 rounded-lg p-3.5 border border-kincha/30 text-center">
+              <div class="text-xs text-kincha font-medium mb-1">要復習しおり</div>
+              <div class="font-mincho text-2xl sm:text-3xl font-bold text-kincha">
+                <span id="stat-bookmarked">0</span><span class="text-sm font-normal">問</span>
+              </div>
+              <div class="text-[11px] text-kincha mt-1">ブックマーク</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Featured Section: Full 80-Question Mock Exams (2 Sets) -->
+      <div class="space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <h3 class="font-mincho text-lg sm:text-xl font-bold flex items-center gap-2">
+            <span class="w-1.5 h-5 bg-kincha rounded-full inline-block"></span>
+            本番形式・模擬試験モード（各80問・制限時間80分・合格ライン56問）
+          </h3>
+          <span class="text-xs text-rikyu">各分野から本番の出題比率通りに80問ずつ配分されています</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Mock Exam 1 -->
+          <div class="bg-white rounded-xl japanese-border p-5 flex flex-col justify-between border-t-4 border-t-matcha hover:shadow-lg transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-matcha text-washi">第1回 本番模試</span>
+                <span id="mock1-best-badge" class="text-xs text-rikyu font-medium">未受験</span>
+              </div>
+              <h4 class="font-mincho text-lg font-bold text-sumi mb-1">第1回 模擬試験（80問）</h4>
+              <p class="text-xs text-rikyu leading-relaxed mb-4">
+                基本〜標準の重要頻出問題を中心に構成された本番形式80問セット（歴史17・茶事13・道具20・茶室12・花禅語10・懐石菓子8）。
+              </p>
+            </div>
+            <button onclick="app.startQuiz('mock1')" class="w-full py-2.5 px-3 bg-matcha hover:bg-matchaLight text-washi rounded-lg text-sm font-bold transition shadow-sm">
+              第1回 模試（80問）を受ける
+            </button>
+          </div>
+
+          <!-- Mock Exam 2 -->
+          <div class="bg-white rounded-xl japanese-border p-5 flex flex-col justify-between border-t-4 border-t-kincha hover:shadow-lg transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-kincha text-washi">第2回 本番模試</span>
+                <span id="mock2-best-badge" class="text-xs text-rikyu font-medium">未受験</span>
+              </div>
+              <h4 class="font-mincho text-lg font-bold text-sumi mb-1">第2回 模擬試験（80問）</h4>
+              <p class="text-xs text-rikyu leading-relaxed mb-4">
+                第1回と重複しない別問題80問で構成された実践セット。周辺知識や差がつく問題まで網羅し、合格を盤石にします。
+              </p>
+            </div>
+            <button onclick="app.startQuiz('mock2')" class="w-full py-2.5 px-3 bg-kincha hover:opacity-90 text-washi rounded-lg text-sm font-bold transition shadow-sm">
+              第2回 模試（80問）を受ける
+            </button>
+          </div>
+
+          <!-- Shuffle 80 Mock Exam -->
+          <div class="bg-white rounded-xl japanese-border p-5 flex flex-col justify-between border-t-4 border-t-sumi hover:shadow-lg transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-sumi text-washi">総合シャッフル模試</span>
+                <span id="mockShuffle-best-badge" class="text-xs text-rikyu font-medium">毎回変化</span>
+              </div>
+              <h4 class="font-mincho text-lg font-bold text-sumi mb-1">ランダム80問 本番模試</h4>
+              <p class="text-xs text-rikyu leading-relaxed mb-4">
+                全160問の中から、6分野の出題比率を保ったまま毎回ランダムに80問を抽出して本番形式で出題します。
+              </p>
+            </div>
+            <button onclick="app.startQuiz('mock_shuffle')" class="w-full py-2.5 px-3 bg-sumi hover:bg-stone-700 text-washi rounded-lg text-sm font-bold transition shadow-sm">
+              シャッフル80問模試を受ける
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode Selection -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="font-mincho text-lg sm:text-xl font-bold flex items-center gap-2">
+            <span class="w-1.5 h-5 bg-matcha rounded-full inline-block"></span>
+            日常の稽古・弱点克服モード
+          </h3>
+          <button onclick="app.openResetModal()" class="text-xs text-rikyu hover:text-shu underline">
+            学習履歴を初期化する
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Mode 1: All 160 -->
+          <div class="bg-white rounded-xl japanese-border p-5 flex flex-col justify-between hover:border-matcha transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-matcha text-washi">王道稽古</span>
+                <span class="text-xs text-rikyu font-mincho">第1問〜第160問</span>
+              </div>
+              <h4 class="font-mincho text-lg font-bold text-sumi mb-1">全160問 通しで挑戦</h4>
+              <p class="text-xs text-rikyu leading-relaxed mb-4">
+                茶の歴史から懐石・菓子まで、体系的に並んだ全160問を順番に解き進めます。未解答からの再開も可能です。
+              </p>
+            </div>
+            <div class="space-y-2">
+              <button onclick="app.startQuiz('all')" class="w-full py-2.5 px-3 bg-matcha hover:bg-matchaLight text-washi rounded-lg text-sm font-medium transition shadow-sm">
+                第1問から始める
+              </button>
+              <button onclick="app.startQuiz('unanswered')" id="btn-unanswered" class="w-full py-2 px-3 bg-washi hover:bg-washiDark text-sumi border border-stone-300 rounded-lg text-xs font-medium transition">
+                未解答の問題から始める
+              </button>
+            </div>
+          </div>
+
+          <!-- Mode 2: Speed Mock Exam -->
+          <div class="bg-white rounded-xl japanese-border p-5 flex flex-col justify-between hover:border-matcha transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-kincha text-washi">短時間稽古</span>
+                <span class="text-xs text-rikyu font-mincho">ランダム出題</span>
+              </div>
+              <h4 class="font-mincho text-lg font-bold text-sumi mb-1">スピード稽古（10問 / 25問）</h4>
+              <p class="text-xs text-rikyu leading-relaxed mb-4">
+                全160問から無作為に抽出して出題します。隙間時間のお稽古や日々のウォーミングアップに最適です。
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="app.startQuiz('random10')" class="py-2.5 px-3 bg-kincha hover:opacity-90 text-washi rounded-lg text-sm font-medium transition shadow-sm">
+                手軽な10問
+              </button>
+              <button onclick="app.startQuiz('random25')" class="py-2.5 px-3 bg-sumi hover:bg-stone-700 text-washi rounded-lg text-sm font-medium transition shadow-sm">
+                充実の25問
+              </button>
+            </div>
+          </div>
+
+          <!-- Mode 3: Review & Weaknesses -->
+          <div class="bg-white rounded-xl japanese-border p-5 flex flex-col justify-between hover:border-matcha transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-shu text-washi">弱点克服</span>
+                <span class="text-xs text-rikyu font-mincho">厳選復習</span>
+              </div>
+              <h4 class="font-mincho text-lg font-bold text-sumi mb-1">誤答・要復習のみ再挑戦</h4>
+              <p class="text-xs text-rikyu leading-relaxed mb-4">
+                過去に間違えた問題や、「要復習しおり」を挟んだ問題だけを集中的に解き直して苦手をなくします。
+              </p>
+            </div>
+            <div class="space-y-2">
+              <button onclick="app.startQuiz('review_all')" id="btn-review-all" class="w-full py-2.5 px-3 bg-shu hover:opacity-90 text-washi rounded-lg text-sm font-medium transition shadow-sm">
+                誤答＋しおり (<span id="count-review-all">0</span>問)
+              </button>
+              <button onclick="app.startQuiz('bookmarked')" id="btn-review-bookmark" class="w-full py-2 px-3 bg-washi hover:bg-washiDark text-sumi border border-stone-300 rounded-lg text-xs font-medium transition">
+                しおりのみ (<span id="count-review-bookmark">0</span>問)
+              </button>
+            </div>
+          </div>
+
+          <!-- Mode 4: Dictionary Quick Access -->
+          <div class="bg-white rounded-xl japanese-border p-5 flex flex-col justify-between hover:border-matcha transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-ai text-washi">一覧・検索</span>
+                <span class="text-xs text-rikyu font-mincho">暗記・確認用</span>
+              </div>
+              <h4 class="font-mincho text-lg font-bold text-sumi mb-1">百六十問事典・解説一覧</h4>
+              <p class="text-xs text-rikyu leading-relaxed mb-4">
+                全160問の設問・正解・達人解説を一覧で閲覧できます。キーワード検索や模試回別・分野別絞り込みも可能です。
+              </p>
+            </div>
+            <button onclick="app.showView('dictionary')" class="w-full py-2.5 px-3 bg-ai hover:opacity-90 text-washi rounded-lg text-sm font-medium transition shadow-sm">
+              百六十問事典を開く
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Breakdown & Practice -->
+      <div class="space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <h3 class="font-mincho text-lg sm:text-xl font-bold flex items-center gap-2">
+            <span class="w-1.5 h-5 bg-kincha rounded-full inline-block"></span>
+            分野別（全6カテゴリー・計160問）演習と習熟度
+          </h3>
+          <span class="text-xs text-rikyu">各分野をクリックするとその分野の演習が始まります</span>
+        </div>
+
+        <div id="category-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Populated dynamically by JS -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== QUIZ VIEW ==================== -->
+    <section id="view-quiz" class="hidden space-y-5 fade-in">
+      
+      <!-- Quiz Top Bar -->
+      <div class="bg-white rounded-xl japanese-border p-4 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <button onclick="app.stopTimer(); app.showView('dashboard')" class="text-xs sm:text-sm px-3 py-1.5 rounded-lg bg-washi hover:bg-washiDark text-sumi border border-stone-300 flex items-center gap-1 transition">
+            <span>←</span> 道場へ戻る
+          </button>
+          <div>
+            <div id="quiz-mode-title" class="text-xs text-rikyu font-medium">全160問 通し稽古</div>
+            <div class="font-mincho font-bold text-sm sm:text-base text-sumi">
+              進捗: <span id="quiz-current-index">1</span> / <span id="quiz-total-count">160</span> 問
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 sm:gap-4 flex-wrap">
+          <!-- Timer (Shown during 80-question Mock Exams) -->
+          <div id="quiz-timer-box" class="hidden items-center gap-2 bg-washi px-3 py-1 rounded-lg border border-stone-300 text-xs sm:text-sm">
+            <span class="text-rikyu">残り時間:</span>
+            <span id="quiz-timer-display" class="font-mono font-bold text-sumi">80:00</span>
+            <button onclick="app.toggleTimerPause()" id="btn-timer-pause" class="text-[11px] px-1.5 py-0.5 rounded bg-stone-200 hover:bg-stone-300 text-sumi">一時停止</button>
+          </div>
+
+          <div class="text-xs sm:text-sm">
+            今回の正答: <span id="quiz-session-correct" class="font-bold text-matcha">0</span> / <span id="quiz-session-answered">0</span>
+          </div>
+          <button id="btn-bookmark-toggle" onclick="app.toggleCurrentBookmark()" class="px-3 py-1.5 rounded-lg border text-xs sm:text-sm font-medium flex items-center gap-1.5 transition">
+            <span id="bookmark-icon">☆</span>
+            <span id="bookmark-label">要復習しおり</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="w-full h-2 bg-stone-200 rounded-full overflow-hidden">
+        <div id="quiz-progress-bar" class="h-full bg-matcha transition-all duration-300" style="width: 1%"></div>
+      </div>
+
+      <!-- Question Card -->
+      <div class="bg-white rounded-xl japanese-border p-5 sm:p-8 space-y-6">
+        
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-4">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span id="quiz-q-number" class="font-mincho font-bold text-sm px-3 py-1 rounded bg-sumi text-washi">第1問</span>
+            <span id="quiz-q-category" class="text-xs font-bold px-3 py-1 rounded bg-matchaPale text-matcha">① 茶の歴史</span>
+            <span id="quiz-q-examset" class="text-xs px-2.5 py-0.5 rounded border border-kincha/40 bg-kinchaPale/50 text-kincha font-medium">第1回模試</span>
+          </div>
+          <span id="quiz-q-history-badge" class="text-xs px-2.5 py-0.5 rounded-full bg-stone-100 text-rikyu">未解答</span>
+        </div>
+
+        <!-- Question Text -->
+        <h2 id="quiz-q-text" class="font-mincho text-lg sm:text-xl font-bold text-sumi leading-relaxed">
+          問題文がここに表示されます。
+        </h2>
+
+        <!-- Choices -->
+        <div id="quiz-choices" class="grid grid-cols-1 gap-3">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="text-[11px] text-rikyu text-right hidden sm:block">
+          ※キーボードの「1〜4」キーで解答選択、「Enter / Space」キーで次の問題へ進めます
+        </div>
+
+        <!-- Explanation Box (Hidden until answered) -->
+        <div id="quiz-explanation-box" class="hidden rounded-xl border p-5 space-y-3 fade-in">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div id="quiz-result-banner" class="font-mincho text-lg font-bold flex items-center gap-2">
+              <!-- 正解 / 不正解 -->
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-sumi">
+              正解：<span id="quiz-correct-answer-text" class="font-bold underline"></span>
+            </div>
+          </div>
+
+          <div class="bg-washi/90 rounded-lg p-4 border border-stone-200/80 space-y-1.5">
+            <div class="text-xs font-bold text-kincha flex items-center gap-1.5">
+              <span>🍵 茶道達人のワンポイント解説</span>
+            </div>
+            <p id="quiz-explanation-text" class="text-sm text-sumi leading-relaxed"></p>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+            <button onclick="app.prevQuestion()" id="btn-prev-q" class="px-4 py-2.5 rounded-lg border border-stone-300 bg-white hover:bg-washi text-xs sm:text-sm font-medium text-sumi transition disabled:opacity-40">
+              ← 前の問題へ
+            </button>
+            <button onclick="app.nextQuestion()" id="btn-next-q" class="px-6 py-2.5 rounded-lg bg-matcha hover:bg-matchaLight text-washi text-sm font-bold transition shadow-sm">
+              次の問題へ進む →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== QUIZ RESULT VIEW ==================== -->
+    <section id="view-result" class="hidden space-y-6 fade-in">
+      <div class="bg-white rounded-xl japanese-border p-6 sm:p-10 text-center space-y-6 max-w-3xl mx-auto">
+        <div id="result-seal" class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-matchaPale text-matcha font-mincho text-2xl font-bold border border-matcha/30">
+          結
+        </div>
+        <div class="space-y-2">
+          <div id="result-mode-label" class="text-xs font-bold text-kincha tracking-widest">稽古完了</div>
+          <h2 id="result-title-heading" class="font-mincho text-2xl sm:text-3xl font-bold text-sumi">お稽古お疲れ様でした</h2>
+          <p id="result-comment" class="text-sm text-rikyu max-w-lg mx-auto leading-relaxed"></p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 max-w-md mx-auto bg-washi p-4 rounded-xl border border-stone-200">
+          <div>
+            <div class="text-xs text-rikyu">出題数</div>
+            <div id="result-total" class="font-mincho text-2xl font-bold text-sumi">80問</div>
+          </div>
+          <div>
+            <div class="text-xs text-matcha">正解数</div>
+            <div id="result-correct" class="font-mincho text-2xl font-bold text-matcha">64問</div>
+          </div>
+          <div>
+            <div class="text-xs text-kincha">正答率（合格70%）</div>
+            <div id="result-rate" class="font-mincho text-2xl font-bold text-kincha">80%</div>
+          </div>
+        </div>
+
+        <!-- Category Breakdown in Result -->
+        <div id="result-category-breakdown" class="max-w-xl mx-auto text-left space-y-2.5 bg-washi/60 p-4 rounded-xl border border-stone-200">
+          <!-- Populated dynamically -->
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="app.retryWrongInSession()" id="btn-retry-session-wrong" class="px-5 py-2.5 rounded-lg bg-shu hover:opacity-90 text-washi text-sm font-medium transition shadow-sm">
+            今回間違えた問題を復習する
+          </button>
+          <button onclick="app.showView('dashboard')" class="px-5 py-2.5 rounded-lg bg-matcha hover:bg-matchaLight text-washi text-sm font-medium transition shadow-sm">
+            道場トップへ戻る
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DICTIONARY VIEW (ALL 160 LIST) ==================== -->
+    <section id="view-dictionary" class="hidden space-y-5 fade-in">
+      <div class="bg-white rounded-xl japanese-border p-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 class="font-mincho text-xl font-bold text-sumi">茶道文化検定3級 百六十問事典（全160問一覧）</h2>
+            <p class="text-xs text-rikyu">問題をクリックすると解説を開閉できます。「この問題を解く」から個別演習も可能です。</p>
+          </div>
+          <button onclick="app.toggleAllDictExplanations()" id="btn-toggle-all-dict" class="text-xs px-3 py-1.5 rounded-lg bg-washi hover:bg-washiDark border border-stone-300 text-sumi font-medium transition">
+            すべての正解・解説を表示する
+          </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 pt-1">
+          <div class="sm:col-span-4">
+            <input type="text" id="dict-search" oninput="app.renderDictionary()" placeholder="キーワード検索（例：利休、待庵、七事式...）" class="w-full px-3.5 py-2 rounded-lg border border-stone-300 bg-washi/60 text-sm focus:outline-none focus:border-matcha">
+          </div>
+          <div class="sm:col-span-3">
+            <select id="dict-category" onchange="app.renderDictionary()" class="w-full px-3 py-2 rounded-lg border border-stone-300 bg-washi/60 text-sm focus:outline-none focus:border-matcha">
+              <option value="all">すべての分野（全160問）</option>
+              <option value="① 茶の歴史">① 茶の歴史（34問）</option>
+              <option value="② 茶事・茶会">② 茶事・茶会（26問）</option>
+              <option value="③ 茶道具">③ 茶道具（40問）</option>
+              <option value="④ 茶室・露地">④ 茶室・露地（24問）</option>
+              <option value="⑤ 茶席の花・禅語">⑤ 茶席の花・禅語（20問）</option>
+              <option value="⑥ 懐石・菓子">⑥ 懐石・菓子（16問）</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <select id="dict-examset" onchange="app.renderDictionary()" class="w-full px-3 py-2 rounded-lg border border-stone-300 bg-washi/60 text-sm focus:outline-none focus:border-matcha">
+              <option value="all">全模試（160問）</option>
+              <option value="1">第1回模試（80問）</option>
+              <option value="2">第2回模試（80問）</option>
+            </select>
+          </div>
+          <div class="sm:col-span-3">
+            <select id="dict-status" onchange="app.renderDictionary()" class="w-full px-3 py-2 rounded-lg border border-stone-300 bg-washi/60 text-sm focus:outline-none focus:border-matcha">
+              <option value="all">すべての状態</option>
+              <option value="unanswered">未解答のみ</option>
+              <option value="correct">正解済みのみ</option>
+              <option value="wrong">誤答（未克服）のみ</option>
+              <option value="bookmarked">要復習しおりのみ</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="dict-count-label" class="text-xs text-rikyu px-1">全160件を表示中</div>
+
+      <div id="dict-list" class="space-y-3">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Reset Confirmation Modal -->
+  <div id="modal-reset" class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl japanese-border max-w-md w-full p-6 space-y-4">
+      <h3 class="font-mincho text-lg font-bold text-sumi">学習履歴の初期化</h3>
+      <p class="text-sm text-rikyu leading-relaxed">
+        これまでの全160問の正誤記録、模試最高スコア、および「要復習しおり」のデータをすべて消去し、初期状態に戻します。よろしいですか？
+      </p>
+      <div class="flex justify-end gap-3 pt-2">
+        <button onclick="app.closeResetModal()" class="px-4 py-2 rounded-lg border border-stone-300 text-sm text-sumi hover:bg-washi">
+          キャンセル
+        </button>
+        <button onclick="app.confirmReset()" class="px-4 py-2 rounded-lg bg-shu text-washi text-sm font-medium hover:opacity-90">
+          初期化する
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-washiDark border-t border-stone-300 py-5 mt-12 text-center text-xs text-rikyu">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <span class="font-mincho font-bold text-sumi">茶道文化検定3級 対策百六十問道場（本番80問×2回分完全収録）</span>
+      <span>茶の歴史・茶事・茶道具・茶室・露地・茶花・禅語・懐石・菓子 完全網羅</span>
+    </div>
+  </footer>
+
+  <!-- Application Script & 160 Questions Database -->
+  <script>
+    const RAW_QUESTIONS_DATA = [
+      // ==================== ① 茶の歴史 (全34問: 第1回17問 + 第2回17問) ====================
+      {
+        id: 1,
+        category: "① 茶の歴史",
+        question: "中国・唐代に世界最古の茶の専門書『茶経』全3巻を著し、「茶聖」や「茶神」として尊ばれた人物は誰ですか。",
+        choices: ["陸羽", "栄西", "盧仝", "趙州従諗"],
+        answer: 0,
+        explanation: "唐代の文人・陸羽（りくう）は『茶経』全3巻10章を著し、茶の起源、製法、道具、点て方、歴史などを体系化しました。当時の茶は茶葉を蒸して固めた「餅茶（へいちゃ・団茶）」でした。"
+      },
+      {
+        id: 2,
+        category: "① 茶の歴史",
+        question: "陸羽の『茶経』の冒頭に記されている、茶の木を表す言葉として正しいものはどれですか。",
+        choices: ["茶は南方の嘉木なり", "茶は養生の仙薬なり", "茶は百草の王なり", "茶は清風の友なり"],
+        answer: 0,
+        explanation: "『茶経』一之源の冒頭は「茶者南方之嘉木也（茶は南方の嘉木なり）」で始まります。「茶は養生の仙薬なり」は栄西の『喫茶養生記』の冒頭文です。"
+      },
+      {
+        id: 3,
+        category: "① 茶の歴史",
+        question: "平安時代初期の史書『日本後紀』弘仁6年（815年）の条に、嵯峨天皇に茶を献じたと記されている近江国・梵釈寺の僧は誰ですか。",
+        choices: ["永忠", "最澄", "空海", "行基"],
+        answer: 0,
+        explanation: "『日本後紀』には、唐から帰国した大僧都・永忠（えいちゅう）が、近江の梵釈寺に行幸した嵯峨天皇に自ら茶を煎じて奉ったと記されており、これが日本の正史における最古の喫茶記録です。"
+      },
+      {
+        id: 4,
+        category: "① 茶の歴史",
+        question: "鎌倉時代初期に宋から帰国して茶種をもたらし、「茶は養生の仙薬なり、延齢の妙術なり」で始まる『喫茶養生記』を著した臨済宗の開祖は誰ですか。",
+        choices: ["栄西", "道元", "明恵", "良観"],
+        answer: 0,
+        explanation: "栄西（ようさい／えいさい）は1191年に宋から帰国し、現在の抹茶のルーツとなる「抹茶法（点茶法）」を日本に伝えました。将軍・源実朝に茶と『喫茶養生記』を献上したことでも知られます。"
+      },
+      {
+        id: 5,
+        category: "① 茶の歴史",
+        question: "栄西から贈られた茶種を京都の栂尾（とがのお）高山寺に植えて栽培を広め、のちにその茶が「本茶」と称される礎を築いた僧は誰ですか。",
+        choices: ["明恵上人", "叡尊", "一休宗純", "夢窓疎石"],
+        answer: 0,
+        explanation: "高山寺の明恵上人（みょうえしょうにん）は栄西から茶種を譲り受け、栂尾で栽培しました。栂尾の茶園は日本最古の茶園とされ、ここで産する茶は最上品の「本茶」と呼ばれました。"
+      },
+      {
+        id: 6,
+        category: "① 茶の歴史",
+        question: "鎌倉時代末期に、奈良・西大寺の叡尊（えいそん）が民衆救済や戒律復興の活動の中で行い、庶民に茶が広まるきっかけとなった催しは何ですか。",
+        choices: ["大茶盛", "北野大茶湯", "四頭茶会", "淋汗茶湯"],
+        answer: 0,
+        explanation: "西大寺の叡尊は、八幡神への献茶の余服を巨大な茶碗で参拝者に振る舞う「大茶盛（おおちゃもり）」を行い、高貴な薬であった茶を庶民にも広めました。"
+      },
+      {
+        id: 7,
+        category: "① 茶の歴史",
+        question: "南北朝時代から室町時代初期にかけて流行した、茶を飲み比べて産地を当てる遊芸「闘茶」において、栂尾産の「本茶」に対して他産地の茶は何と呼ばれましたか。",
+        choices: ["非茶", "別茶", "わび茶", "番茶"],
+        answer: 0,
+        explanation: "闘茶（茶寄合）では、栂尾産の茶を「本茶（ほんちゃ）」、それ以外の産地の茶を「非茶（ひちゃ）」と呼び分け、四種十服などの形式で飲み当てて豪華な賭け物を競いました。"
+      },
+      {
+        id: 8,
+        category: "① 茶の歴史",
+        question: "室町幕府八代将軍・足利義政に同朋衆として仕え、唐物中心の書院の茶や座敷飾りの法式を大成した「三阿弥」のひとりであり、『君台観左右帳記』の編纂に関わった人物は誰ですか。",
+        choices: ["能阿弥", "世阿弥", "音阿弥", "善阿弥"],
+        answer: 0,
+        explanation: "能阿弥（のうあみ）・芸阿弥・相阿弥の三代（三阿弥）は将軍家の同朋衆として唐物の管理や書院の座敷飾りを整え、『君台観左右帳記』にその法式をまとめました。"
+      },
+      {
+        id: 9,
+        category: "① 茶の歴史",
+        question: "奈良の称名寺の僧であったものの、大徳寺の一休宗純に参禅して「茶禅一味」の境地を悟り、草庵の「わび茶」の創始者と位置づけられる茶人は誰ですか。",
+        choices: ["村田珠光", "武野紹鴎", "千利休", "古田織部"],
+        answer: 0,
+        explanation: "村田珠光（むらたじゅこう）は、書院の茶に禅の精神と草庵の趣を取り入れ、和漢の境をまぎらかす「わび茶」の礎を築きました。"
+      },
+      {
+        id: 10,
+        category: "① 茶の歴史",
+        question: "村田珠光が一休宗純から参禅の印可の証として授けられ、初めて茶席の床に掛けたと伝えられる墨蹟の筆者は誰ですか。",
+        choices: ["圜悟克勤", "虚堂智愚", "大燈国師", "無準師範"],
+        answer: 0,
+        explanation: "珠光が一休から授けられたのは、中国・北宋の禅僧・圜悟克勤（えんごこくごん）の墨蹟（圜悟墨蹟・法語）です。これを床に掛けたことが、茶席における墨蹟第一主義の始まりとされます。"
+      },
+      {
+        id: 11,
+        category: "① 茶の歴史",
+        question: "村田珠光が養子の村田宗珠に宛てて書き残した、茶の湯の秘伝書で「心の師とはなるとも心を師とせざれ」という言葉でも知られる一巻は何ですか。",
+        choices: ["心の文", "山上宗二記", "南方録", "茶湯一会集"],
+        answer: 0,
+        explanation: "珠光が著した『心の文（こころのふみ）』（お尋ねの事）には、「和漢のさかいをまぎらかす事」「月も雲間のなきは嫌にて候」など、わび茶の根本精神が記されています。"
+      },
+      {
+        id: 12,
+        category: "① 茶の歴史",
+        question: "堺の豪商・皮屋（武野家）に生まれ、三条西実隆に和歌を学び、村田珠光のわび茶をさらに発展させて千利休の師となった茶人は誰ですか。",
+        choices: ["武野紹鴎", "今井宗久", "津田宗及", "神屋宗湛"],
+        answer: 0,
+        explanation: "武野紹鴎（たけのじょうおう）は和歌の「正直に慎み深くおごらぬ様」という心と茶の湯を結びつけ、四畳半茶室をさらに簡素化し、袋棚（紹鴎棚）や竹の蓋置などを取り入れました。"
+      },
+      {
+        id: 13,
+        category: "① 茶の歴史",
+        question: "武野紹鴎がわび茶の心を表す歌として引いた、藤原定家の和歌「見渡せば花も紅葉もなかりけり 浦の苫屋の秋の夕暮」が収められている勅撰和歌集はどれですか。",
+        choices: ["新古今和歌集", "古今和歌集", "万葉集", "山家集"],
+        answer: 0,
+        explanation: "『新古今和歌集』巻四・秋歌上に収められた藤原定家の名歌です。紹鴎は華やかな「花も紅葉も（唐物）」を知った上で到達する「浦の苫屋（わびの境地）」を説きました。"
+      },
+      {
+        id: 14,
+        category: "① 茶の歴史",
+        question: "堺の魚問屋（納屋衆）に生まれ、幼名を「与四郎」、法名を「宗易」といい、織田信長・豊臣秀吉に茶頭として仕えてわび茶を大成した人物は誰ですか。",
+        choices: ["千利休", "千道安", "千少庵", "千宗旦"],
+        answer: 0,
+        explanation: "千利休（せんのりきゅう、1522〜1591）は堺の今市町に生まれ、北向道陳や武野紹鴎に茶を学び、大徳寺の笑嶺宗訢・古渓宗陳らに参禅して草庵のわび茶を完成させました。"
+      },
+      {
+        id: 15,
+        category: "① 茶の歴史",
+        question: "天正13年（1585年）、豊臣秀吉が正親町天皇に茶を献じた「禁中茶会」に際し、宗易に「利休」の居士号を勅賜された背景として正しいものはどれですか。",
+        choices: ["後見人として参内するため居士号が必要だった", "黄金の茶室を設計した褒美として与えられた", "北野大茶湯の総奉行を務めた功績による", "小田原攻めの陣中で秀吉を慰めたことによる"],
+        answer: 0,
+        explanation: "町人（堺の商人）であった宗易が宮中（禁中）に昇殿して秀吉の後見を務めるにあたり、無位無官では参内できないため、大徳寺の古渓宗陳の撰により正親町天皇から「利休居士」の号を賜りました。"
+      },
+      {
+        id: 16,
+        category: "① 茶の歴史",
+        question: "天正15年（1587年）10月1日、豊臣秀吉が九州平定ののち京都の北野天満宮境内で催した「北野大茶湯」のお触れ（高札）の内容として正しいものはどれですか。",
+        choices: ["茶湯熱心であれば身分を問わず参加を許し、抹茶がなければ焦がし（麦粉等）でもよいとした", "大名と公家のみに参加を限定し、唐物の名物道具を必ず持参させた", "十日間予定通り開催され、最終日に秀吉が利休に切腹を命じた", "京都の町衆には参加を禁じ、堺と博多の豪商のみを招いた"],
+        answer: 0,
+        explanation: "北野大茶湯は、武士から町人・百姓、さらには外国人まで茶を愛する者すべての参加を認め、二畳の敷物や松原での野点も許すという破格の大茶会でした（実際には1日で中止）。"
+      },
+      {
+        id: 17,
+        category: "① 茶の歴史",
+        question: "千利休の高弟『利休七哲』にも数えられる武将茶人で、利休没後に天下一の宗匠となり、歪みのある沓形（くつがた）茶碗など大胆で破調の美を好んだ人物は誰ですか。",
+        choices: ["古田織部", "小堀遠州", "片桐石州", "細川三斎"],
+        answer: 0,
+        explanation: "古田織部（ふるたおりべ）は徳川秀忠の茶の湯指南役などを務め、緑釉を用いた織部焼や、窓を多く設けた燕庵（えんなん）に代表される武家風の「織部好み」を創始しました。"
+      },
+      {
+        id: 18,
+        category: "① 茶の歴史",
+        question: "古田織部に茶を学び、江戸幕府の作事奉行としても活躍し、王朝文化の優美さとわび茶を融合させた「綺麗さび」の茶風を築いた大名茶人は誰ですか。",
+        choices: ["小堀遠州", "金森宗和", "織田有楽", "松平不昧"],
+        answer: 0,
+        explanation: "小堀遠州（こぼりえんしゅう）は『伊勢物語』や『源氏物語』などの古典和歌の情趣を茶道具（中興名物）や茶室（孤篷庵忘筌など）に取り入れ、「綺麗さび」と呼ばれる瀟洒な茶風を確立しました。"
+      },
+      {
+        id: 19,
+        category: "① 茶の歴史",
+        question: "千利休の孫であり、仕官せず生涯を在野のわび茶人として貫き、「乞食（こつじき）宗旦」とも呼ばれて三千家分立の礎を築いた人物は誰ですか。",
+        choices: ["千宗旦", "千少庵", "千道安", "江岑宗左"],
+        answer: 0,
+        explanation: "千宗旦（せんのそうたん、元伯宗旦）は父・少庵の跡を継ぎ、一畳半の「今日庵」などを建てて利休のわび茶を徹底して守り抜き、息子たちを通じて三千家を確立させました。"
+      },
+      {
+        id: 20,
+        category: "① 茶の歴史",
+        question: "千宗旦の息子たちによって成立した「三千家」の初代（三男・四男・次男）と家元・茶室名の組み合わせとして正しいものはどれですか。",
+        choices: ["表千家（江岑宗左・不審菴） ― 裏千家（仙叟宗室・今日庵） ― 武者小路千家（一翁宗守・官休庵）", "表千家（仙叟宗室・今日庵） ― 裏千家（江岑宗左・不審菴） ― 武者小路千家（一翁宗守・官休庵）", "表千家（一翁宗守・官休庵） ― 裏千家（仙叟宗室・不審菴） ― 武者小路千家（江岑宗左・今日庵）", "表千家（江岑宗左・官休庵） ― 裏千家（一翁宗守・今日庵） ― 武者小路千家（仙叟宗室・不審菴）"],
+        answer: 0,
+        explanation: "三千家は、三男・江岑宗左が継いだ表千家（不審菴）、四男・仙叟宗室が継いだ裏千家（今日庵）、次男・一翁宗守が興した武者小路千家（官休庵）の三家です。検定の最頻出事項です。"
+      },
+      {
+        id: 21,
+        category: "① 茶の歴史",
+        question: "江戸時代中期、形骸化した茶の湯を刷新するため、表千家七代・如心斎と裏千家八代・又玄斎らが中心となって制定した新しい稽古法を何と呼びますか。",
+        choices: ["七事式", "四ヶ伝", "小習事十六ヶ条", "茶湯一会集"],
+        answer: 0,
+        explanation: "「七事式（しちじしき）」は、花月・且坐・廻り炭・廻り花・茶カブキ・一二三・数茶の7つの稽古法で、禅の精神と集団での修練を取り入れて茶道の中興をもたらしました。"
+      },
+      {
+        id: 22,
+        category: "① 茶の歴史",
+        question: "江戸時代後期の松江藩主で、名物茶器を収集して『古今名物類聚』を著し、不昧流の祖となった大名茶人は誰ですか。",
+        choices: ["松平不昧（治郷）", "井伊直弼（宗観）", "柳沢淇園", "平瀬露香"],
+        answer: 0,
+        explanation: "松江藩七代藩主・松平治郷（号：不昧、まつだいらふまい）は『古今名物類聚』を編纂して大名物・名物・中興名物を分類整理し、藩窯の楽山焼や銘菓（若草・山川など）を育てました。"
+      },
+      {
+        id: 23,
+        category: "① 茶の歴史",
+        question: "中国・唐代の詩人で、新茶を贈られた礼として作った詩『走筆謝孟諫議寄新茶（七碗の茶歌）』の中で、一碗から七碗まで茶を飲むごとの爽快な境地を詠んだ人物は誰ですか。",
+        choices: ["盧仝（玉川子）", "白居易（白楽天）", "杜甫", "蘇軾（東坡）"],
+        answer: 0,
+        explanation: "唐の詩人・盧仝（ろどう、号は玉川子）が詠んだ「七碗の茶歌」は、茶の効用と風雅な境地を讃えた名詩として、日本の茶席や禅林でも深く親しまれました。"
+      },
+      {
+        id: 24,
+        category: "① 茶の歴史",
+        question: "鎌倉時代、栄西が著した『喫茶養生記』を将軍・源実朝に献上したことが記されている、鎌倉幕府の歴史書は何ですか。",
+        choices: ["吾妻鏡", "愚管抄", "太平記", "徒然草"],
+        answer: 0,
+        explanation: "『吾妻鏡（あづまかがみ）』建保2年（1214年）2月4日条に、二日酔い（宿酔）に悩む将軍・源実朝に栄西が茶一盞と茶の徳を誉める書（『喫茶養生記』）を進上したことが記されています。"
+      },
+      {
+        id: 25,
+        category: "① 茶の歴史",
+        question: "南北朝時代の武将・佐々木道誉（高氏）らに代表される、華美な衣装や高価な唐物道具を飾り立てて豪奢な闘茶会などを催した風潮を何と呼びますか。",
+        choices: ["婆娑羅（ばさら）", "かぶき", "わび・さび", "綺麗さび"],
+        answer: 0,
+        explanation: "南北朝時代には、既存の権威に縛られず豪華絢爛な唐物を競い合う「婆娑羅（ばさら）」の風潮が流行し、佐々木道誉ら「ばさら大名」が催す豪華な闘茶会が盛んに行われました。"
+      },
+      {
+        id: 26,
+        category: "① 茶の歴史",
+        question: "室町時代中期、八代将軍・足利義政が京都の東山山荘（慈照寺）の同仁斎（四畳半書院）などを舞台に発展させた、書院飾りと唐物鑑賞を中心とする文化を何と呼びますか。",
+        choices: ["東山文化", "北山文化", "桃山文化", "元禄文化"],
+        answer: 0,
+        explanation: "足利義政の東山山荘を中心に栄えた「東山文化」では、同仁斎における書院の茶や立花、水墨画、能楽などが発展し、後世の茶道・華道・建築の源流となりました。"
+      },
+      {
+        id: 27,
+        category: "① 茶の歴史",
+        question: "千利休が最初に茶の湯を学んだ堺の茶人で、東山流の書院台子の茶を能阿弥の弟子・空海から受け継ぎ、のちに利休を武野紹鴎へ紹介した人物は誰ですか。",
+        choices: ["北向道陳", "山上宗二", "辻玄哉", "松本珠報"],
+        answer: 0,
+        explanation: "千利休は17歳の頃、まず堺の北向道陳（きたむきどうちん）に入門して書院台子の茶を学び、のちに道陳の勧めで武野紹鴎の門に入ってわび茶を学びました。"
+      },
+      {
+        id: 28,
+        category: "① 茶の歴史",
+        question: "千利休とともに織田信長や豊臣秀吉の茶頭（さどう）を務め、堺の豪商「天王寺屋」を営んで『天王寺屋会記』を残した人物は誰ですか。",
+        choices: ["津田宗及", "今井宗久", "島井宗室", "長谷川宗仁"],
+        answer: 0,
+        explanation: "千利休（納屋）、今井宗久（納屋）、津田宗及（天王寺屋）の三人は堺を代表する茶人で、「天下三宗匠」と称されました。津田宗及父子が残した『天王寺屋会記』は当時の茶湯を知る第一級史料です。"
+      },
+      {
+        id: 29,
+        category: "① 茶の歴史",
+        question: "千利休の高弟（堺の茶人）で、名物道具や茶湯の秘伝・心得を記した茶書『山上宗二記』を著し、天正18年（1590年）の小田原陣中で秀吉の怒りに触れて没した人物は誰ですか。",
+        choices: ["山上宗二", "神屋宗湛", "細川三斎", "高山右近"],
+        answer: 0,
+        explanation: "山上宗二（やまのうえそうじ）は利休に20年師事した高弟で、珠光・紹鴎・利休の茶風や名物記、さらに「一期に一度の会」の教えなどを記した『山上宗二記』を残しました。"
+      },
+      {
+        id: 30,
+        category: "① 茶の歴史",
+        question: "千利休の門下である有力大名7名を指す「利休七哲」に含まれ、利休が切腹のために堺へ下る際、淀の船着場まで見送りに駆けつけた2人の人物は誰ですか。",
+        choices: ["古田織部と細川三斎（忠興）", "蒲生氏郷と前田利長", "高山右近と牧村兵部", "芝山監物と瀬田掃部"],
+        answer: 0,
+        explanation: "天正19年（1591年）2月、秀吉の命により京から堺へ護送される利休を、危険を顧みず淀の河畔まで見送ったのは「古田織部」と「細川三斎（忠興）」の2人であったと伝えられます。"
+      },
+      {
+        id: 31,
+        category: "① 茶の歴史",
+        question: "飛騨高山藩主・金森可重の子として生まれ、公家社会と深く交わって典雅で優しい「姫宗和」とも評される茶風（宗和流）を築いた茶人は誰ですか。",
+        choices: ["金森宗和", "片桐石州", "織田有楽", "小堀遠州"],
+        answer: 0,
+        explanation: "金森宗和（かなもりそうわ）は京都で公家や寺院に茶を指南し、野々村仁清の色絵陶器などを引き立て、優美で雅やかな「姫宗和」と称される茶風を確立しました。"
+      },
+      {
+        id: 32,
+        category: "① 茶の歴史",
+        question: "大和国小泉藩主で、桑山宗仙（左近）に茶を学び、四代将軍・徳川家綱に茶の湯を献じて武家茶道の主流となる「石州流」の祖となった人物は誰ですか。",
+        choices: ["片桐石州（貞昌）", "細川三斎", "有馬頼旨", "遠藤元閑"],
+        answer: 0,
+        explanation: "片桐石州（かたぎりせきしゅう）は知恩院山門などの作事奉行も務め、将軍家綱の茶道師範となって「石州三百ヶ条」を著し、江戸時代の武家茶道で最大の勢力を誇る石州流を開きました。"
+      },
+      {
+        id: 33,
+        category: "① 茶の歴史",
+        question: "江戸時代中期、千宗旦の四男・仙叟宗室の甥であり門人でもあった藤村庸軒（ふじむらようけん）の談話を、その子・川上孤山が記録した逸話集で、利休や宗旦らの言行を伝える茶書は何ですか。",
+        choices: ["茶話指月集", "南方録", "喫茶養生記", "君台観左右帳記"],
+        answer: 0,
+        explanation: "元禄14年（1701年）刊行の『茶話指月集（さわしげつしゅう）』は、宗旦四天王のひとりである藤村庸軒が語った利休・少庵・宗旦らの逸話を集めた書で、わび茶の実像を伝える重要史料です。"
+      },
+      {
+        id: 34,
+        category: "① 茶の歴史",
+        question: "明治時代以降、実業家として活躍する傍ら古美術や名物茶器を収集し、大師会（だいしかい）などの大茶会を催した近代の茶人を何と呼びますか。",
+        choices: ["近代数寄者（益田鈍翁・高橋箒庵・原三渓など）", "同朋衆", "千家十職", "利休七哲"],
+        answer: 0,
+        explanation: "明治から昭和戦前にかけて、益田孝（鈍翁）、高橋義雄（箒庵）、原富太郎（三渓）、小林一三（逸翁）、松永安左エ門（耳庵）ら政財界の茶人は「近代数寄者（きんだいすきしゃ）」と呼ばれ、茶道文化の保護と発展に大きく貢献しました。"
+      },
+
+      // ==================== ② 茶事・茶会 (全26問: 第1回13問 + 第2回13問) ====================
+      {
+        id: 35,
+        category: "② 茶事・茶会",
+        question: "茶の湯の最も正式なもてなしである「茶事」のうち、基本とされる「正午の茶事」の進行順序として正しいものはどれですか。",
+        choices: ["席入り → 初炭 → 懐石 → 主菓子 → 中立 → 濃茶 → 後炭 → 薄茶", "席入り → 懐石 → 初炭 → 薄茶 → 中立 → 主菓子 → 濃茶 → 後炭", "席入り → 初炭 → 濃茶 → 懐石 → 中立 → 主菓子 → 後炭 → 薄茶", "席入り → 主菓子 → 濃茶 → 中立 → 初炭 → 懐石 → 後炭 → 薄茶"],
+        answer: 0,
+        explanation: "正午の茶事では、初座で「初炭・懐石・主菓子」をいただき、一度露地へ出る「中立（なかだち）」ののち、後座で「濃茶・後炭・薄茶」をいただくのが基本の流れです（※風炉の時期は懐石の後に初炭を行うこともあります）。"
+      },
+      {
+        id: 36,
+        category: "② 茶事・茶会",
+        question: "茶事の当日、客が席入りする前にまず通され、身支度を整えたり連客が揃うのを待ったりする部屋を何と呼びますか。",
+        choices: ["寄付（待合）", "腰掛待合", "水屋", "鎖の間"],
+        answer: 0,
+        explanation: "客はまず玄関から「寄付（よりつき）」に入り、足袋を履き替えたり荷物を置いたりして準備を整えた後、白湯（香煎）をいただいて露地の「腰掛待合」へと進みます。"
+      },
+      {
+        id: 37,
+        category: "② 茶事・茶会",
+        question: "寄付（待合）において、客が連客と挨拶を交わしながらいただく、季節の香りを添えた温かい飲み物を何と呼びますか。",
+        choices: ["香煎（白湯）", "薄茶", "甘酒", "昆布茶"],
+        answer: 0,
+        explanation: "寄付では、桜湯や紫蘇（しそ）、あられなどを浮かべた「香煎（こうせん）」または白湯が出され、客の喉を潤し心を落ち着かせます。"
+      },
+      {
+        id: 38,
+        category: "② 茶事・茶会",
+        question: "客が露地の腰掛待合に揃った後、亭主が客を迎えに出る無言の挨拶を何と呼びますか。",
+        choices: ["迎付", "中立", "送り礼", "立礼"],
+        answer: 0,
+        explanation: "亭主が蹲踞（つくばい）で手と口を清め、猿戸を開けて腰掛待合の客と無言で総礼を交わすことを「迎付（むかえつけ）」といいます。"
+      },
+      {
+        id: 39,
+        category: "② 茶事・茶会",
+        question: "正午の茶事において、初座で懐石と主菓子をいただいた客が、一度茶室から露地の腰掛待合へ退出することを何と呼びますか。",
+        choices: ["中立", "退席", "迎付", "席替"],
+        answer: 0,
+        explanation: "初座を終えて一度露地へ出ることを「中立（なかだち）」といいます。その間に亭主は茶室の簾（すだれ）を巻き上げ、床の掛物を外して花を生け、濃茶の準備を整えます。"
+      },
+      {
+        id: 40,
+        category: "② 茶事・茶会",
+        question: "中立ののち、後座（濃茶席）の準備が整ったことを腰掛待合の客に知らせるため、亭主が打ち鳴らす鳴り物は何ですか。",
+        choices: ["銅鑼（または喚鐘）", "拍子木", "太鼓", "風鈴"],
+        answer: 0,
+        explanation: "昼の茶事（正午の茶事など）の後座の合図には「銅鑼（どら）」を大小5回または7回打ち鳴らします。夜咄（よばなし）などの茶事では「喚鐘（かんしょう）」が用いられます。客は蹲踞（つくばい）のそばなどで膝をつき、聴き入ります。"
+      },
+      {
+        id: 41,
+        category: "② 茶事・茶会",
+        question: "正午の茶事において、床の間のしつらえを「初座」と「後座」で改める際の一般的な決まりはどれですか。",
+        choices: ["初座には掛物（軸）を掛け、後座には掛物を外して花を入れる", "初座には花を入れ、後座には掛物（軸）を掛ける", "初座には花と掛物を両方飾り、後座には香炉のみを飾る", "初座も後座も同じ掛物を掛け続け、花は飾らない"],
+        answer: 0,
+        explanation: "初座ではまず茶事の主題を示す「掛物（墨蹟など）」を掛けて客を迎え、中立の間に掛物を外して、後座では清らかな「茶花」を生けて濃茶を点てるのが基本です（朝茶事などでは逆になることもあります）。"
+      },
+      {
+        id: 42,
+        category: "② 茶事・茶会",
+        question: "茶の湯の暦において、風炉から炉へ切り替える11月頃に、春に摘んで茶壺に詰めておいた新茶の封を切って祝う茶事を何と呼びますか。",
+        choices: ["口切の茶事（炉開きの茶事）", "名残の茶事", "暁の茶事", "跡見の茶事"],
+        answer: 0,
+        explanation: "11月は「茶人の正月」とも呼ばれ、炉を開くとともに茶壺の口封を切って葉茶を取り出し、石臼で挽いて新茶を味わう「口切（くちきり）の茶事」や「炉開きの茶事」が行われます。"
+      },
+      {
+        id: 43,
+        category: "② 茶事・茶会",
+        question: "風炉の最後の月である10月（神無月）に、半年間にわたり用いた茶壺の茶の残りや風炉との別れを惜しんで催される茶事は何ですか。",
+        choices: ["名残の茶事", "夜咄の茶事", "飯後の茶事", "朝茶事"],
+        answer: 0,
+        explanation: "10月は風炉の最後の月であり、過ぎゆく秋と風炉の名残を惜しむ「名残（なごり）の茶事」が催されます。金継ぎのある茶碗や侘びた道具、名残の花などが好まれます。"
+      },
+      {
+        id: 44,
+        category: "② 茶事・茶会",
+        question: "厳冬期（1月〜2月頃）の早朝、まだ暗いうちの午前4時頃に席入りし、手燭や行灯の灯りのもとで進められ、後座の頃に夜が明ける茶事は何ですか。",
+        choices: ["暁の茶事", "朝茶事", "夜咄の茶事", "正午の茶事"],
+        answer: 0,
+        explanation: "「暁（あかつき）の茶事」は厳寒期の未明（午前4時頃）に始まり、暗闇と静寂の中で湯の沸く音を聞き、濃茶の頃に障子が白み始める劇的な茶事です。"
+      },
+      {
+        id: 45,
+        category: "② 茶事・茶会",
+        question: "冬の夕方（午後5時〜6時頃）に席入りし、露地には足元行灯を置き、茶室では短檠（たんけい）や和蝋燭の灯りを用いて行われる茶事は何ですか。",
+        choices: ["夜咄の茶事", "暁の茶事", "跡見の茶事", "不時の茶事"],
+        answer: 0,
+        explanation: "「夜咄（よばなし）の茶事」は冬の長い夜を楽しむ茶事で、手燭の交換や「前茶（ぜんちゃ）」、幽玄な和蝋燭の灯りが特徴です。"
+      },
+      {
+        id: 46,
+        category: "② 茶事・茶会",
+        question: "夏の暑い盛りの早朝（午前5時〜6時頃）、涼しい時間帯に席入りして爽やかにもてなす茶事は何ですか。",
+        choices: ["朝茶事", "暁の茶事", "飯後の茶事", "正午の茶事"],
+        answer: 0,
+        explanation: "「朝茶事（あさちゃじ）」は盛夏の早朝に行われ、露を含んだ朝の花や、洗い米を用いた簡潔で涼やかな懐石などで暑さを忘れさせる工夫がなされます。"
+      },
+      {
+        id: 47,
+        category: "② 茶事・茶会",
+        question: "茶席において、客の代表として床や道具の拝見、亭主との問答・挨拶などを務める第一の客を何と呼びますか。",
+        choices: ["正客", "詰", "次客", "半東"],
+        answer: 0,
+        explanation: "客の筆頭を「正客（しょうきゃく）」といい、二番目を次客、三番目を三客、最後の客を「詰（つめ・末客）」と呼びます。"
+      },
+      {
+        id: 48,
+        category: "② 茶事・茶会",
+        question: "茶席において、客の最後尾に座り、茶室の戸の開閉や道具の片付け・拝見物の返却など、席中の働きを担う客を何と呼びますか。",
+        choices: ["詰（末客）", "正客", "次客", "相伴"],
+        answer: 0,
+        explanation: "「詰（つめ）」は末客とも呼ばれ、茶席の作法に熟達した人が務める大切な役目です。躙口（にじりぐち）の戸を閉めて猿（錠）を掛けたり、拝見物を亭主へ戻したりします。"
+      },
+      {
+        id: 49,
+        category: "② 茶事・茶会",
+        question: "大寄せの茶会などで、床の掛物と花、および飾られた道具の由緒や銘、作者などを記して寄付や席中に置かれる書き付けを何と呼びますか。",
+        choices: ["会記", "茶経", "案内状", "送り状"],
+        answer: 0,
+        explanation: "茶会で用いた道具組の記録や一覧を「会記（かいき）」といいます。当日の席中に置かれるほか、歴史上の茶人が残した茶会記（『天王寺屋会記』『松屋会記』など）は貴重な史料となっています。"
+      },
+      {
+        id: 50,
+        category: "② 茶事・茶会",
+        question: "明治5年（1872年）の京都博覧会に際し、外国人客なども椅子に腰掛けて茶をいただけるよう裏千家十一代・玄々斎が創案した点前様式は何ですか。",
+        choices: ["立礼", "盆略点前", "茶箱点前", "大円草"],
+        answer: 0,
+        explanation: "椅子と卓（テーブル）を用いて行う点前を「立礼（りゅうれい）」といいます。玄々斎が創案した「点茶盤」がその始まりです。"
+      },
+      {
+        id: 51,
+        category: "② 茶事・茶会",
+        question: "食事の時間帯を避け、朝または昼の食事を済ませた後に招いて、懐石を省き「菓子・濃茶・薄茶（または吸物・八寸を添える）」でもてなす茶事を何と呼びますか。",
+        choices: ["飯後の茶事", "跡見の茶事", "不時の茶事", "暁の茶事"],
+        answer: 0,
+        explanation: "食事の後に催すため「飯後（はんご）の茶事」といい、懐石を略して主菓子・濃茶・薄茶（必要に応じて小吸物・八寸）でもてなします。"
+      },
+      {
+        id: 52,
+        category: "② 茶事・茶会",
+        question: "ある茶事が催された直後に、その茶席に参列できなかった人々が請うて、同じ道具組や余韻をそのまま拝見させてもらう茶事を何と呼びますか。",
+        choices: ["跡見の茶事", "名残の茶事", "口切の茶事", "一客一亭"],
+        answer: 0,
+        explanation: "前の茶事の跡を拝見することから「跡見（あとみ）の茶事」と呼びます。前席で使われた道具組や趣向をそのまま楽しむ茶事です。"
+      },
+      {
+        id: 53,
+        category: "② 茶事・茶会",
+        question: "前もって案内状を出さず、思いがけない来客があった際や、雪が降った朝などに急遽思いついて催す茶事を何と呼びますか。",
+        choices: ["不時の茶事（臨時茶事）", "飯後の茶事", "正午の茶事", "跡見の茶事"],
+        answer: 0,
+        explanation: "予定していなかった時に臨機応変にもてなす茶事を「不時（ふじ）の茶事」といいます。亭主の普段からの準備と機転が試されます。"
+      },
+      {
+        id: 54,
+        category: "② 茶事・茶会",
+        question: "茶事の開催に先立ち、亭主から客へ送られる招待状を「案内状」といいますが、客が招きを受ける返事や、前日に伺う確認の挨拶を何と呼びますか。",
+        choices: ["前礼（ぜんれい）", "後礼（ごれい）", "迎付（むかえつけ）", "総礼（そうれい）"],
+        answer: 0,
+        explanation: "茶事の前日（または数日前）に正客らが亭主のもとへ招きの礼に伺うことを「前礼（ぜんれい）」、茶事の翌日にお礼に伺う（または書状を送る）ことを「後礼（ごれい）」といいます。"
+      },
+      {
+        id: 55,
+        category: "② 茶事・茶会",
+        question: "後座の「濃茶」の席において、一碗に点てられた濃茶を正客から次客、三客、詰へと順番に回し飲みしていただくことを何と呼びますか。",
+        choices: ["吸茶（すいちゃ）", "前茶（ぜんちゃ）", "点茶（てんちゃ）", "供茶（くちゃ）"],
+        answer: 0,
+        explanation: "一碗の濃茶を客全員で分け合っていただくことを「吸茶（すいちゃ）」といい、主客および連客の一体感を象徴する作法です。"
+      },
+      {
+        id: 56,
+        category: "② 茶事・茶会",
+        question: "濃茶をいただいた後、正客が亭主に茶碗・茶入・茶杓・仕覆の拝見を請い、茶入・茶杓・仕覆について尋ねる質問の内容として最も一般的なものはどれですか。",
+        choices: ["茶入のお形・お窯元、お茶杓のお作・ご銘、お仕覆のお裂地", "茶入の購入価格、茶杓の竹の産地、仕覆の仕立て職人の名前", "茶葉の農園名、釜の重さ、炭の産地の3点のみ", "茶室の畳の枚数、露地の石の数、水指の水の量"],
+        answer: 0,
+        explanation: "濃茶の道具拝見では、正客は亭主に「お茶入のお形（なり）・お窯（かま）」「お茶杓のお作・ご銘」「お仕覆のお裂地（きれじ）」などを尋ね、主客の問答を楽しみます。"
+      },
+      {
+        id: 57,
+        category: "② 茶事・茶会",
+        question: "炭手前には、濃茶の湯を沸かすために初座で行う「初炭（しょずみ）」と、薄茶の湯のために濃茶の後に行う「後炭（ごずみ）」がありますが、炭の置き方の順序で最初に入れる最も太い炭は何ですか。",
+        choices: ["胴炭（どうずみ）", "丸管（まるくだ）", "割管（わりくだ）", "輪胴（わどう）"],
+        answer: 0,
+        explanation: "炭手前では、まず火種の向こうに最も大きく中心となる「胴炭（どうずみ）」を入れ、続いて丸管、割管、点炭（てんずみ）、枝炭（えだずみ）などを順次添えていきます。"
+      },
+      {
+        id: 58,
+        category: "② 茶事・茶会",
+        question: "炭手前において、灰を整えたり釜の周りを清めたりするために用いられる、大きな鳥の羽根を3枚重ねて作られた道具は何ですか。",
+        choices: ["羽箒（はぼうき）", "茶巾（ちゃきん）", "灰匙（はいさじ）", "火箸（ひばし）"],
+        answer: 0,
+        explanation: "炭手前では、鶴・白鳥・梟（ふくろう）・青鸞などの羽根を3枚重ねた「羽箒（はぼうき）」を用いて炉縁や風炉の周りを清めます。羽根の向きにより炉用（右羽）と風炉用（左羽）があります。"
+      },
+      {
+        id: 59,
+        category: "② 茶事・茶会",
+        question: "七事式（しちじしき）の7つの科目のうち、「月」「花」「一」「二」「三」の5枚の折据（おりすえ）の中の札を引き、月の札を引いた者が茶を飲み、花の札を引いた者が茶を点てる稽古法は何ですか。",
+        choices: ["花月（かげつ）", "且坐（しゃざ）", "茶カブキ（ちゃかぶき）", "一二三（ひふみ）"],
+        answer: 0,
+        explanation: "「花月（かげつ）」は七事式の基本となる科目で、折据の中の「月・花・一・二・三」の札を順次引き、当たった札によって即座に亭主（花）と客（月）の役割が入れ替わる動的な稽古法です。"
+      },
+      {
+        id: 60,
+        category: "② 茶事・茶会",
+        question: "七事式のひとつで、鎌倉・室町時代の「闘茶」の伝統を受け継ぎ、数種類の茶を飲み比べてその茶銘（産地）を当てる稽古法は何ですか。",
+        choices: ["茶カブキ（ちゃかぶき）", "数茶（かずちゃ）", "廻り花（まわりばな）", "且坐（しゃざ）"],
+        answer: 0,
+        explanation: "「茶カブキ（茶歌舞伎）」は、試飲した「竹」「梅」の2種の茶と、後から出される「上・中・下（客）」の3服の茶を飲み比べて銘柄を当てる稽古法です。"
+      },
+
+      // ==================== ③ 茶道具 (全40問: 第1回20問 + 第2回20問) ====================
+      {
+        id: 61,
+        category: "③ 茶道具",
+        question: "茶人たちが「一楽、二萩、三唐津」と称して茶碗の格付けや好みを語った言葉において、「一楽」が指す焼き物は何ですか。",
+        choices: ["樂焼", "信楽焼", "楽山焼", "常滑焼"],
+        answer: 0,
+        explanation: "茶碗の味わいとして「一楽（樂焼）、二萩（萩焼）、三唐津（唐津焼）」とよく言われます。いずれも手取りが柔らかく、茶映りのよい国焼（和物）茶碗の代表です。"
+      },
+      {
+        id: 62,
+        category: "③ 茶道具",
+        question: "唐物茶碗の代表格である「天目茶碗」のうち、曜変天目・油滴天目・禾目（のぎめ）天目などが焼かれた中国・福建省の窯はどこですか。",
+        choices: ["建窯", "吉州窯", "景徳鎮窯", "龍泉窯"],
+        answer: 0,
+        explanation: "福建省の建窯（けんよう）では鉄分の多い黒釉を用いた天目茶碗（建盞）が焼かれました。国宝の曜変天目（静嘉堂文庫・藤田美術館・大徳寺龍光院所蔵の3碗）が特に有名です。"
+      },
+      {
+        id: 63,
+        category: "③ 茶道具",
+        question: "高麗茶碗（朝鮮半島で作られた茶碗）の中で最も格式が高いとされ、高台周りに「竹の節高台」や釉薬の縮れである「梅花皮（かいらぎ）」が見られる茶碗は何ですか。",
+        choices: ["井戸茶碗", "三島茶碗", "刷毛目茶碗", "粉引茶碗"],
+        answer: 0,
+        explanation: "「一井戸、二楽、三唐津」とも言われるほど高麗茶碗の最高峰とされるのが「井戸茶碗」です。国宝の「喜左衛門井戸（大徳寺孤篷庵蔵）」などが代表作です。"
+      },
+      {
+        id: 64,
+        category: "③ 茶道具",
+        question: "高麗茶碗の一種で、器の表面に細かい縄目や花紋などを彫り込み、そこに白土を埋め込む「象嵌（ぞうがん）」の技法で作られた茶碗は何ですか。",
+        choices: ["三島茶碗", "井戸茶碗", "堅手茶碗", "熊川茶碗"],
+        answer: 0,
+        explanation: "象嵌による細かい文様が、伊豆の三島大社で発行された暦（三島暦）の文字に似ていたことから、茶人たちに「三島（みしま）茶碗」（暦手）と呼ばれました。"
+      },
+      {
+        id: 65,
+        category: "③ 茶道具",
+        question: "千利休の指導のもと、聚楽第の近くで陶工・長次郎が創始した「樂焼」の成形・焼成方法の特徴として正しいものはどれですか。",
+        choices: ["ろくろを使わず手捏ね（てづくね）で成形し、比較的低温で一碗ずつ焼成する", "磁器質の白土をろくろで薄く挽き、高温の登り窯で大量に焼成する", "型に流し込んで成形し、釉薬を一切掛けずに十日間焼き締める", "朝鮮半島から輸入した素地に、京都で金襴手の絵付けを施す"],
+        answer: 0,
+        explanation: "樂茶碗はろくろを使わず、手と箆（へら）だけで成形する「手捏ね」で作られ、小さな窯で一碗ずつ焼成されます。長次郎の黒樂茶碗「大黒」「俊寛」、赤樂茶碗「ムキ栗」などが有名です。"
+      },
+      {
+        id: 66,
+        category: "③ 茶道具",
+        question: "樂家三代・道入（のんこう）の代表作や、本阿弥光悦の「不二山」など、江戸時代初期に名碗が数多く生まれた茶碗の種類は何ですか。",
+        choices: ["樂茶碗", "萩茶碗", "薩摩茶碗", "九谷茶碗"],
+        answer: 0,
+        explanation: "樂家三代の道入（ノンコウ）は艶やかな幕釉（まくぐすり）を用いた名碗を残し、また芸術家の本阿弥光悦も樂家の協力を得て国宝「不二山」などの独創的な樂茶碗を制作しました。"
+      },
+      {
+        id: 67,
+        category: "③ 茶道具",
+        question: "夏（風炉の時期）に好んで用いられる茶碗の形として、口が大きく開いて浅く、湯が冷めやすいように工夫された茶碗を何と呼びますか。",
+        choices: ["平茶碗（馬盥など）", "筒茶碗", "半筒茶碗", "沓茶碗"],
+        answer: 0,
+        explanation: "盛夏には見た目に涼しく、熱い湯が早く冷めるように口が広く浅い「平茶碗（ひらぢゃわん）」や「馬盥（ばたらい）」が用いられます。逆に厳冬期には「筒茶碗」が用いられます。"
+      },
+      {
+        id: 68,
+        category: "③ 茶道具",
+        question: "濃茶を入れる陶製の容器「茶入」において、肩がくっきりと角張って張り出しており、最も格調高い「真」の形とされるものはどれですか。",
+        choices: ["肩衝", "茄子", "文琳", "大海"],
+        answer: 0,
+        explanation: "茶入の形には肩衝（かたつき）、茄子（なす）、文琳（ぶんりん）、尻膨（しりぶくら）、丸壺、大海（たいかい）、鶴首などがあり、肩が張った「肩衝」（初花肩衝・新田肩衝など）が最も多くかつ格式高い形とされます。"
+      },
+      {
+        id: 69,
+        category: "③ 茶道具",
+        question: "濃茶器である「茶入」の蓋（ふた）に古来より伝統的に用いられてきた材質は何ですか。",
+        choices: ["象牙", "黒漆塗りの木", "青竹", "唐銅"],
+        answer: 0,
+        explanation: "茶入の蓋には「牙蓋（げぶた）」と呼ばれる象牙製の蓋が用いられ、裏には金箔が貼られています。かつて毒味（毒に触れると変色するという信仰）の意味もあったと伝えられます。"
+      },
+      {
+        id: 70,
+        category: "③ 茶道具",
+        question: "茶入を保護し、格を高めるために着せる名物裂（めいぶつぎれ）などで作られた袋を何と呼びますか。",
+        choices: ["仕覆", "帛紗", "古帛紗", "出帛紗"],
+        answer: 0,
+        explanation: "茶入や挽家、特定の茶碗などを入れる袋を「仕覆（しふく）」といい、金襴・緞子・間道・錦などの裂地に緒（打ち紐）が通されています。"
+      },
+      {
+        id: 71,
+        category: "③ 茶道具",
+        question: "薄茶を入れる木製漆塗りの容器（薄茶器）の総称ともなっている、植物の実の形に似た代表的な器は何ですか。",
+        choices: ["棗", "茶入", "茶壺", "振出"],
+        answer: 0,
+        explanation: "植物のナツメの実に形が似ていることから「棗（なつめ）」と呼ばれます。大きさによって大棗・中棗・小棗があり、他に中次（なかつぎ）や吹雪（ふぶき）、金輪寺などの薄茶器があります。"
+      },
+      {
+        id: 72,
+        category: "③ 茶道具",
+        question: "茶杓（ちゃしゃく）の歴史において、もとは象牙や鼈甲（べっこう）、金属などで作られていたものを、わび茶にふさわしい「竹」で削ることを創始・定着させた流れとして正しいものはどれですか。",
+        choices: ["村田珠光・武野紹鴎を経て、千利休が中央に節のある「中節」の竹茶杓を完成させた", "足利義政が初めて青竹で茶杓を削り、唐物茶入に添えた", "小堀遠州が初めて竹の茶杓を考案し、それ以前はすべて木製であった", "明治時代になって初めて竹製の茶杓が作られるようになった"],
+        answer: 0,
+        explanation: "珠光や紹鴎が竹の茶杓を試み（無節や止節）、千利休が竹の節を中央に置く「中節（なかぶし）」の茶杓を創案して以来、茶人自らが竹を削り「銘」をつける文化が定着しました。"
+      },
+      {
+        id: 73,
+        category: "③ 茶道具",
+        question: "茶の湯の釜において、室町時代に現在の福岡県（筑前国）で作られ、鬼面鐶付（きめんかんつき）と絵画的な地紋、端正な真形（しんなり）を特徴とする古作の釜は何ですか。",
+        choices: ["芦屋釜", "天明釜", "京釜", "南部鉄瓶"],
+        answer: 0,
+        explanation: "「東の天明、西の芦屋」と並び称される古作釜の代表で、筑前の「芦屋釜」はなめらかな挽肌と、松竹梅や馬などの優美な地紋（文様）、鬼面鐶付を特徴とします。"
+      },
+      {
+        id: 74,
+        category: "③ 茶道具",
+        question: "筑前の芦屋釜と並び称された古作の釜で、現在の栃木県佐野市（下野国）で作られ、素朴で力強い肌合いや「常張鐶付（じょうばりかんつき）」を特徴とする釜は何ですか。",
+        choices: ["天明釜", "京釜", "高岡釜", "山形釜"],
+        answer: 0,
+        explanation: "下野国の「天明釜（てんみょうがま・天猫釜）」は、無文で荒々しく力強い肌合いやわびた造形を特徴とし、わび茶人たちに深く愛されました。"
+      },
+      {
+        id: 75,
+        category: "③ 茶道具",
+        question: "千利休の釜師として、京都で「利休好みの京釜」（阿弥陀堂釜、四方釜、尻張釜など）を数多く鋳造した人物は誰ですか。",
+        choices: ["辻与次郎", "長次郎", "黒田正玄", "駒沢利斎"],
+        answer: 0,
+        explanation: "辻与次郎（つじよじろう）は名越善正に学び、千利休の意を受けて阿弥陀堂釜や雲龍釜などの京釜を制作し、天下一の称号を受けました。"
+      },
+      {
+        id: 76,
+        category: "③ 茶道具",
+        question: "千家十職（三千家に出入りする十の職家）のうち、代々「釜師」を務める職家はどれですか。",
+        choices: ["大西清右衛門", "樂吉左衛門", "永樂善五郎", "飛来一閑"],
+        answer: 0,
+        explanation: "千家十職の釜師は「大西清右衛門（おおにしせいえもん）」家です。樂吉左衛門は茶碗師、永樂善五郎は土風炉・焼物師、飛来一閑は一閑張細工師です。"
+      },
+      {
+        id: 77,
+        category: "③ 茶道具",
+        question: "千家十職のうち、茶杓や竹花入、柄杓、蓋置などを手がける「竹細工・柄杓師」はどの家ですか。",
+        choices: ["黒田正玄", "中川浄益", "中村宗哲", "奥村吉兵衛"],
+        answer: 0,
+        explanation: "黒田正玄（くろだしょうげん）家は竹細工・柄杓師です。中川浄益は金物師、中村宗哲は塗師、奥村吉兵衛は表具師です。"
+      },
+      {
+        id: 78,
+        category: "③ 茶道具",
+        question: "湯を汲む「柄杓（ひしゃく）」には「炉用」「風炉用」「兼用（差通し）」の3種類がありますが、合（ごう：水を汲む部分）が大きく、柄の切り止めが「月形（皮側を削ぐ）」になっているものはどれですか。",
+        choices: ["炉用柄杓", "風炉用柄杓", "茶箱用柄杓", "水屋用柄杓"],
+        answer: 0,
+        explanation: "炉用柄杓は大きな炉釜に合わせるため合が大きく、切り止めは竹の皮側を斜めに削いだ「月形」です。風炉用は合がやや小ぶりで、切り止めは身側を削いだ「日形」となっています。"
+      },
+      {
+        id: 79,
+        category: "③ 茶道具",
+        question: "釜の蓋や柄杓の合を置く「蓋置（ふたおき）」のうち、三つ人形、五徳、一閑人、栄螺（さざえ）、蟹、三つ葉、火舎（ほや）の7種を総称して何と呼びますか。",
+        choices: ["七種蓋置", "七事式", "利休七哲", "遠州七窯"],
+        answer: 0,
+        explanation: "「七種（しちしゅ）の蓋置」は唐銅や陶磁器で作られた格式ある7種類の蓋置で、特に「火舎（ほや：香炉形）」が最も格が高いとされます。"
+      },
+      {
+        id: 80,
+        category: "③ 茶道具",
+        question: "炭手前において、炭を継いだ後に炉や風炉の中へくべて香りを立たせる「香」について、炉の時期（冬）と風炉の時期（夏）の組み合わせとして正しいものはどれですか。",
+        choices: ["炉には「練香（ねりこう）」を用い、風炉には「香木（白檀・伽羅など）」を用いる", "炉には「香木」を用い、風炉には「練香」を用いる", "炉も風炉も「線香」のみを用いる", "炉には香を焚かず、風炉にのみ「抹香」を用いる"],
+        answer: 0,
+        explanation: "冬の炉では、蜜や梅肉で練り上げた丸薬状の「練香（ねりこう）」を陶磁器の香合に入れ、夏の風炉では涼やかな「香木（こうぼく）」を木地や漆塗りの香合に入れて用います。"
+      },
+      {
+        id: 81,
+        category: "③ 茶道具",
+        question: "点前に際して釜に差す水を入れておく器を「水指（みずさし）」といいますが、木地を曲げて桜皮で綴じた、わび茶で好まれる水指は何ですか。",
+        choices: ["曲水指・釣瓶水指", "細水指", "皆具水指", "青磁水指"],
+        answer: 0,
+        explanation: "杉や檜の白木を曲げて桜の皮で綴じた「曲水指（まげみずさし）」や、井戸の釣瓶を模した木地の「釣瓶水指（つるべみずさし）」は、清々しい草の道具として重用されます。"
+      },
+      {
+        id: 82,
+        category: "③ 茶道具",
+        question: "茶碗を温めた湯や、茶筅通しをした水を捨てるための器を何と呼びますか。",
+        choices: ["建水", "水指", "水次", "片口"],
+        answer: 0,
+        explanation: "湯水を捨てる器を「建水（けんすい）」または「こぼし」といいます。唐銅、陶器、曲（木地）などの材質があり、棒先・餌畚（えふご）・槍鞘などの形があります。"
+      },
+      {
+        id: 83,
+        category: "③ 茶道具",
+        question: "床の間に掛ける「掛物（掛軸）」の表装様式において、最も格式が高く、墨蹟や古筆などに用いられる、一文字・中廻し・上下（天地）・風帯をすべて備えた表装は何ですか。",
+        choices: ["真の表装（仏仕立て）", "行の表装（大和仕立て）", "草の表装（輪補装）", "額装仕立て"],
+        answer: 0,
+        explanation: "掛物の表装にも「真・行・草」があり、一文字・中廻し・上下をすべて異なる裂で仕立てる「真（しん）の表装」は墨蹟などに用いられます。一文字を省いた茶掛に多い様式は「草（輪補）」です。"
+      },
+      {
+        id: 84,
+        category: "③ 茶道具",
+        question: "天正18年（1590年）の小田原攻めの陣中で、千利休が伊豆韮山の竹を用いて自ら削り、筒に「園城寺（おんじょうじ）」「よなが」「尺八」の銘をつけたことで知られる茶道具は何ですか。",
+        choices: ["竹花入", "茶杓", "蓋置", "茶筅"],
+        answer: 0,
+        explanation: "利休が小田原参陣の折に韮山の竹で作った3本の「竹花入」です。「園城寺（少庵へ）」「よなが（道安へ）」は一重切、「尺八」は節を抜いた筒形の花入です。"
+      },
+      {
+        id: 85,
+        category: "③ 茶道具",
+        question: "台子や棚物のうち、武野紹鴎の袋棚から扉や側板を取り払い、千利休が好んだ桐木地・二本柱で天板と地板が丸い簡素な小棚は何ですか。",
+        choices: ["丸卓", "高麗卓", "二重棚", "吉野棚"],
+        answer: 0,
+        explanation: "利休好みの桐木地「丸卓（まるじょく）」は、天板と地板が丸く二本柱で支えられた簡素な小棚で、草庵向きの棚として広く用いられます。"
+      },
+      {
+        id: 86,
+        category: "③ 茶道具",
+        question: "天目茶碗を載せる台である「天目台」のうち、中国・宋や元の時代に作られた、朱漆や黒漆を何層も塗り重ねて花鳥や雲龍の文様を彫り出した漆器を何と呼びますか。",
+        choices: ["堆朱（ついしゅ）・屈輪（ぐり）などの彫漆", "蒔絵（まきえ）", "一閑張（いっかんばり）", "春慶塗（しゅんけいぬり）"],
+        answer: 0,
+        explanation: "唐物の天目台には、漆を幾重にも塗り重ねて文様を浮き彫りにした「堆朱（ついしゅ）」「堆黒（ついこく）」や渦巻文様を彫った「屈輪（ぐり）」、螺鈿（らでん）などが貴ばれました。"
+      },
+      {
+        id: 87,
+        category: "③ 茶道具",
+        question: "中国・江西省の吉州窯（きっしゅうよう）で焼かれた天目茶碗で、黒釉の上に木の葉の自然灰を焼き付けたり、切り紙を用いて梅花や鳳凰の文様を抜き出したりした茶碗を何と呼びますか。",
+        choices: ["木葉天目（このはてんもく）・玳玻天目（たいひてんもく）", "曜変天目・油滴天目", "灰被天目・黄天目", "青磁天目・白磁天目"],
+        answer: 0,
+        explanation: "福建省の建窯に対して、江西省の吉州窯では実際の木の葉を焼き付けた「木葉天目」や、鼈甲（べっこう）のような斑文・剪紙文様を施した「玳玻天目（たいひてんもく）」が焼かれました。"
+      },
+      {
+        id: 88,
+        category: "③ 茶道具",
+        question: "高麗茶碗の一種で、鉄分の多い黒褐色の素地全体に白泥（白土）を浸し掛けし、白い粉を吹いたような柔らかな景色を見せる茶碗を何と呼びますか。",
+        choices: ["粉引（こひき）茶碗", "井戸茶碗", "刷毛目茶碗", "熊川茶碗"],
+        answer: 0,
+        explanation: "素地全面に白化粧土を掛けて透明釉を施したものを「粉引（こひき・粉吹）茶碗」、刷毛で白土を塗って勢いのある刷毛跡を見せたものを「刷毛目（はけめ）茶碗」と呼びます。"
+      },
+      {
+        id: 89,
+        category: "③ 茶道具",
+        question: "長次郎が千利休の指導のもとで焼いた黒樂・赤樂の茶碗のうち、後世に聚楽第の屋敷跡などから作られ、特に名高い7碗を選んだものを何と呼びますか。",
+        choices: ["利休七種（長次郎七種）", "のんこう七種", "光悦七種", "遠州七窯"],
+        answer: 0,
+        explanation: "長次郎の代表作7碗である「大黒・鉢開・東陽坊（以上黒樂）」「早船・検校・木守・ムキ栗（以上赤樂）」を総称して『利休七種（長次郎七種）』と呼びます。"
+      },
+      {
+        id: 90,
+        category: "③ 茶道具",
+        question: "江戸時代初期、京都の御室（仁和寺門前）に窯を開き、金森宗和らの指導を受けて華麗な色絵の茶壺や水指、茶碗を焼き、「京焼色絵の祖」と称された陶工は誰ですか。",
+        choices: ["野々村仁清", "尾形乾山", "青木木米", "永樂保全"],
+        answer: 0,
+        explanation: "野々村仁清（ののむらにんせい）は卓越したろくろ技術と金銀彩・色絵の技法で王朝風の雅な京焼を完成させ、国宝「色絵藤花文茶壺」や重要文化財「色絵吉野山図茶壺」などの名品を残しました。"
+      },
+      {
+        id: 91,
+        category: "③ 茶道具",
+        question: "山口県萩市を中心に毛利藩の御用窯として発展し、高麗茶碗の伝統を受け継いで「長年使ううちに貫入から茶が染み込み、景色や色合いが変化すること」を指す言葉は何ですか。",
+        choices: ["萩の七化け（ななばけ）", "唐津の三変化", "備前の窯変", "楽の幕釉"],
+        answer: 0,
+        explanation: "萩焼は土が柔らかく吸水性に富むため、使い込むほどに釉薬の貫入（ひび）に茶が染み込んで色調が味わい深く変化し、これを「萩の七化け（茶慣れ）」と呼んで愛玩します。"
+      },
+      {
+        id: 92,
+        category: "③ 茶道具",
+        question: "濃茶を入れる「茶入」の形のうち、リンゴ（林檎）の実に似た丸みのある愛らしい姿をしており、名物「九十九髪茄子」と並ぶ大名物などでも知られる形は何ですか。",
+        choices: ["文琳（ぶんりん）", "肩衝（かたつき）", "大海（たいかい）", "耳付（みみつき）"],
+        answer: 0,
+        explanation: "「文琳（ぶんりん）」とはリンゴの古名（異称）であり、リンゴの実のようにふっくらと丸みを帯びた茶入を文琳茶入（本能寺文琳、玉垣文琳など）と呼びます。"
+      },
+      {
+        id: 93,
+        category: "③ 茶道具",
+        question: "薄茶器（塗物）の一種で、蓋と身の合わせ目（合口）が胴の中央にあり、全体が円筒形をしている器を何と呼びますか。",
+        choices: ["中次（なかつぎ）", "大棗（おおなつめ）", "平棗（ひらなつめ）", "雪吹（ふぶき）"],
+        answer: 0,
+        explanation: "胴の真ん中に合口がある円筒形の薄茶器を「中次（なかつぎ）」といいます。中次の甲（上蓋の縁）と底の角を丸く面取りしたものは「雪吹（ふぶき）」と呼ばれます。"
+      },
+      {
+        id: 94,
+        category: "③ 茶道具",
+        question: "天正19年（1591年）2月、千利休が自刃する直前に自ら削り、最後の茶会の後に細川三斎（または古田織部）に形見として贈ったと伝わる、命銘茶杓は何ですか。",
+        choices: ["銘「泪（なみだ）」", "銘「園城寺」", "銘「ゆがみ」", "銘「無事」"],
+        answer: 0,
+        explanation: "利休が辞世の茶会に用いて古田織部に与えたと伝わる茶杓『銘 泪（なみだ）』（徳川美術館蔵）は、織部が四角い窓を開けた筒を作って位牌代わりに拝んだという逸話で名高い名品です。"
+      },
+      {
+        id: 95,
+        category: "③ 茶道具",
+        question: "茶を点てる「茶筅（ちゃせん）」の産地として室町時代以来の伝統を誇り、村田珠光と縁の深い鷹山（たかやま）氏が製法を伝えた奈良県生駒市の里はどこですか。",
+        choices: ["高山（たかやま）", "吉野（よしの）", "柳生（やぎゅう）", "月ヶ瀬（つきがせ）"],
+        answer: 0,
+        explanation: "奈良県生駒市高山町は全国の茶筅の大部分を生産する伝統産地です。流派によって白竹（裏千家）・煤竹（表千家）・黒竹（武者小路千家）など使い分けられます。"
+      },
+      {
+        id: 96,
+        category: "③ 茶道具",
+        question: "点前の際、茶碗を清めて拭くために用いられる白い布「茶巾（ちゃきん）」の素材として、古来より最も上質とされ用いられてきた織物は何ですか。",
+        choices: ["奈良晒（ならざらし）などの上質な麻布", "京都西陣の絹織物", "三河の木綿布", "羊毛のフェルト"],
+        answer: 0,
+        explanation: "茶巾には吸水性・水切れに優れた白い麻布、とりわけ奈良特産の「奈良晒（ならざらし）」が用いられます。"
+      },
+      {
+        id: 97,
+        category: "③ 茶道具",
+        question: "点前で茶器や茶杓を清めるために腰に佩びる絹布を「帛紗（ふくさ）」といいますが、三千家において男性用・女性用として一般的に用いられる色の組み合わせはどれですか。",
+        choices: ["男性は「紫」、女性は「朱（または赤）」を基本とする", "男性は「白」、女性は「黒」のみを用いる", "男性は「黄色」、女性は「青」のみを用いる", "男女ともに「緑色」以外は使用が禁じられている"],
+        answer: 0,
+        explanation: "塩瀬の帛紗は、千利休の妻・宗恩が考案したと伝えられ、男性（および長老）は高貴な「紫」、女性や年少者は「朱（赤）」を用いるのが基本です。"
+      },
+      {
+        id: 98,
+        category: "③ 茶道具",
+        question: "千家十職（せんけじっしょく）のうち、棗や炉縁、盆などの漆器を手がける「塗師（ぬし）」と、建水や火箸、皆具などの金属器を手がける「金物師（かなものし）」の正しい組み合わせはどれですか。",
+        choices: ["塗師：中村宗哲 ― 金物師：中川浄益", "塗師：飛来一閑 ― 金物師：大西清右衛門", "塗師：駒沢利斎 ― 金物師：黒田正玄", "塗師：土田友湖 ― 金物師：奥村吉兵衛"],
+        answer: 0,
+        explanation: "千家十職の塗師は「中村宗哲（なかむらそうてつ）」家、金物師は「中川浄益（なかがわじょうえき）」家です。なお、指物師は駒沢利斎、袋師は土田友湖です。"
+      },
+      {
+        id: 99,
+        category: "③ 茶道具",
+        question: "書院の台子（だいす）点前などで一揃いとして用いられる、同じ材質・意匠で作られた「水指・杓立（しゃくたて）・建水・蓋置」の4点セットを何と呼びますか。",
+        choices: ["皆具（かいぐ）", "四ヶ伝（しかでん）", "七種（しちしゅ）", "三具足（みつぐそく）"],
+        answer: 0,
+        explanation: "台子や長板の点前で用いられる「水指・杓立・建水・蓋置」の4点を唐銅や染付、オランダ写しなどで揃えたものを「皆具（かいぐ）」といいます。"
+      },
+      {
+        id: 100,
+        category: "③ 茶道具",
+        question: "5月から10月まで用いられる「風炉（ふろ）」には唐銅風炉・鉄風炉・土風炉などがありますが、前方に火窓（ひまど）が開いた土風炉に対して、火窓がなく灰を山形に盛り上げて作る風炉の灰形を何と呼びますか。",
+        choices: ["二文字押切灰（または遠山灰・丸灰など前瓦を入れる灰形）", "炉の湿し灰", "鱗灰（うろこばい）", "糸目灰"],
+        answer: 0,
+        explanation: "前が開いた「切合風炉」「道安風炉」に対して、火窓のあるものを「眉風炉（まゆぶろ）」といい、唐銅の朝鮮風炉や琉球風炉、道安風炉などではそれぞれ定められた美しい灰形（二文字押切灰や遠山灰など）を作ります。"
+      },
+
+      // ==================== ④ 茶室・露地 (全24問: 第1回12問 + 第2回12問) ====================
+      {
+        id: 101,
+        category: "④ 茶室・露地",
+        question: "茶室の広さにおいて、畳四畳半を基準とし、それより狭い茶室（三畳・二畳・一畳半など）を総称して何と呼びますか。",
+        choices: ["小間", "広間", "書院", "鎖の間"],
+        answer: 0,
+        explanation: "茶室では「四畳半」を基準とし、四畳半未満（三畳台目、二畳など）を「小間（こま）」、四畳半を超える部屋（六畳、八畳など）を「広間（ひろま）」と呼びます。"
+      },
+      {
+        id: 102,
+        category: "④ 茶室・露地",
+        question: "千利休の作と伝えられ、京都府大山崎町の妙喜庵（みょうきあん）に現存する国宝の茶室「待庵」の広さは何畳ですか。",
+        choices: ["二畳", "四畳半", "三畳台目", "五畳"],
+        answer: 0,
+        explanation: "妙喜庵の「待庵（たいあん）」は現存する日本最古の草庵茶室（国宝）で、客畳一畳と点前畳一畳からなる極小の「二畳隅炉」の茶室です。"
+      },
+      {
+        id: 103,
+        category: "④ 茶室・露地",
+        question: "妙喜庵「待庵」の内部に見られる建築上の大きな特徴として、正しいものはどれですか。",
+        choices: ["床の間の天井や壁の入隅を丸く土で塗り回した「室床（むろどこ）」である", "床の間の横に付書院と違棚を備えた格式高い書院造である", "縁側との境に明かり障子の上半分を吊った吹き放ちの意匠がある", "中央に八本の化粧柱を立てた十畳の大広間である"],
+        answer: 0,
+        explanation: "待庵の床の間は、柱や天井の角を隠すように荒壁の土で丸く塗り回した「室床（むろどこ）」となっており、二畳の空間に奥行きと独特の静寂を生み出しています。"
+      },
+      {
+        id: 104,
+        category: "④ 茶室・露地",
+        question: "織田信長の弟である大名茶人・織田有楽（うらく）が京都・建仁寺の正伝院に建て、現在は愛知県犬山市の有楽苑に移築されている国宝の茶室は何ですか。",
+        choices: ["如庵", "待庵", "密庵", "燕庵"],
+        answer: 0,
+        explanation: "織田有楽が建てた国宝の茶室「如庵（じょあん）」は二畳半台目の茶室で、外壁の腰に古い暦を貼った「暦貼りの席」や、竹を詰めて打った「有楽窓」、三角形の鱗板（うろこいた）で知られます。"
+      },
+      {
+        id: 105,
+        category: "④ 茶室・露地",
+        question: "小堀遠州が京都・大徳寺の塔頭である龍光院に建てた「密庵（みったん）」とともに、大徳寺の別の塔頭「孤篷庵（こほうあん）」に建てた代表的な茶室は何ですか。",
+        choices: ["忘筌", "八窓庵", "湘南亭", "残月亭"],
+        answer: 0,
+        explanation: "大徳寺孤篷庵の「忘筌（ぼうせん）」は小堀遠州の代表作で、十二畳の広間でありながら、中敷居より上だけに明かり障子を吊り、下部を吹き放ちにして露地の景色を取り込む開放的な意匠が特徴です。"
+      },
+      {
+        id: 106,
+        category: "④ 茶室・露地",
+        question: "草庵茶室において、客が頭を下げて身をかがめながら席入りするために設けられた、縦横二尺数寸（約65〜70cm四方）ほどの小さな出入口を何と呼びますか。",
+        choices: ["躙口", "茶道口", "給仕口", "貴人口"],
+        answer: 0,
+        explanation: "「躙口（にじりぐち）」は千利休が枚方の漁師の舟の入口（舟入）などに着想を得て考案したとされ、武士も刀を外し、身分の上下を離れて平等な立場で茶室に入る象徴となりました。"
+      },
+      {
+        id: 107,
+        category: "④ 茶室・露地",
+        question: "茶室の畳の名称において、風炉や炉を据えて亭主が点前を行う畳を何と呼びますか。",
+        choices: ["点前畳（道具畳）", "貴人畳", "踏込畳", "客畳"],
+        answer: 0,
+        explanation: "茶道具を飾り点前を行う畳を「点前畳（てまえだたみ）」または「道具畳」といいます。茶道口から入って最初の畳は「踏込畳（ふみこみだたみ）」、床の間の前の畳は「貴人畳（きにんだたみ）」と呼ばれます。"
+      },
+      {
+        id: 108,
+        category: "④ 茶室・露地",
+        question: "茶室の広さを表す「三畳台目（さんじょうだいめ）」などの『台目（だいめ）』とは、どのような大きさの畳を指しますか。",
+        choices: ["丸畳（一畳）から台子（だいす）一幅分（約四分の一）を差し引いた、約四分の三の長さの畳", "普通の畳の二倍の長さがある細長い畳", "半畳（正方形）よりもさらに小さい三角形の畳", "床の間に敷かれる特別な縁付きの畳"],
+        answer: 0,
+        explanation: "「台目畳（だいめだたみ）」とは、丸畳（一畳）の長さから台子（だいす）の幅（一尺四寸）を引いた、およそ丸畳の4分の3の長さの点前畳のことです。"
+      },
+      {
+        id: 109,
+        category: "④ 茶室・露地",
+        question: "茶室の床の間において、床柱の正面や脇に打たれ、花入を掛けるために用いられる釘は何ですか。",
+        choices: ["花釘（無双釘・落釘など）", "軸釘", "釜蛭釘", "柳釘"],
+        answer: 0,
+        explanation: "床の間の正面壁の中央には竹の「無双釘（中釘）」、床柱には「花釘（落釘）」が打たれ、掛花入を掛けるために使われます。床の天井から釜を吊るすのは「釜蛭釘」です。"
+      },
+      {
+        id: 110,
+        category: "④ 茶室・露地",
+        question: "茶室の天井において、床の間の上や貴人畳の上には格の高い「平天井（竿縁天井など）」を張り、点前座の上にはへりくだりの心から低く傾斜させた天井を張ることがあります。この傾斜した天井を何と呼びますか。",
+        choices: ["化粧屋根裏（落天井・掛込天井）", "格天井", "折上格天井", "二重天井"],
+        answer: 0,
+        explanation: "小間の茶室では、客座を「平天井」、点前座の上を一段低くした「落天井」や屋根裏の垂木を見せた「化粧屋根裏（掛込天井）」とするなど、空間に変化と謙譲の意を表します。"
+      },
+      {
+        id: 111,
+        category: "④ 茶室・露地",
+        question: "草庵茶室に付随する庭園を「露地（ろじ）」と呼びますが、この言葉の由来となった仏教経典『法華経』の語句はどれですか。",
+        choices: ["四方の門を出でて、露地（白牛車のある清浄な地）に坐す", "露のごとく来たりて、露のごとく去る", "山川草木ことごとく露に濡れる", "露の世は露の世ながらさりながら"],
+        answer: 0,
+        explanation: "『法華経』譬喩品の「三界の火宅（煩悩に満ちた俗世）を出でて、露地に坐す」に由来し、茶室へ至る庭を俗世の塵を払う清浄な道場として「露地」と呼びます。"
+      },
+      {
+        id: 112,
+        category: "④ 茶室・露地",
+        question: "露地において、茶室に入る前に客が身を屈めて手と口を清めるために設けられた水鉢（手水鉢）と、その周囲の役石の組物を何と呼びますか。",
+        choices: ["蹲踞", "塵穴", "雪隠", "腰掛待合"],
+        answer: 0,
+        explanation: "身を低くつくばって（しゃがんで）手を使うことから「蹲踞（つくばい）」と呼ばれます。水鉢の周囲には前石・手燭石・湯桶石・水門（海）が配されます。"
+      },
+      {
+        id: 113,
+        category: "④ 茶室・露地",
+        question: "冬の茶事（炉の時期）において、蹲踞（つくばい）のそばの「湯桶石」の上に置かれ、客が冷たい水ではなく温かい湯で手を清められるようにする木製の桶を何と呼びますか。",
+        choices: ["手水桶（湯桶）", "建水", "水指", "片口"],
+        answer: 0,
+        explanation: "寒さの厳しい冬の茶事では、亭主の心遣いとして蹲踞の湯桶石の上に湯を入れた「湯桶（ゆおけ）」が置かれます。"
+      },
+      {
+        id: 114,
+        category: "④ 茶室・露地",
+        question: "露地の「外露地」と「内露地」の境に設けられる門や仕切りのうち、丸太の柱に軽い屋根を架けた門や、竹を編んだ簡素な片開き戸のことを何と呼びますか。",
+        choices: ["中門・中潜（または猿戸）", "山門・仁王門", "唐門・勅使門", "長屋門・薬医門"],
+        answer: 0,
+        explanation: "外露地と内露地の境には、壁に小さな潜り戸を設けた「中潜（なかくぐり）」や茅葺屋根の「中門」、竹の枝折戸である「猿戸（さるど）」などが設けられます。"
+      },
+      {
+        id: 115,
+        category: "④ 茶室・露地",
+        question: "露地の茶室の近く（躙口や蹲踞のそばなど）に掘られた小さな穴で、庭の落ち葉や塵を掃き清めた証として青竹の箸を添えておく設備は何ですか。",
+        choices: ["塵穴", "水琴窟", "炉壇", "灰屋"],
+        answer: 0,
+        explanation: "「塵穴（ちりあな）」は露地の清掃が行き届いていること、また心の塵をも払い捨てることを示す象徴的な設えで、中に杉葉や木の葉を少し入れ、青竹の塵箸を添えます。"
+      },
+      {
+        id: 116,
+        category: "④ 茶室・露地",
+        question: "現存する「国宝三茶室」として並び称される3つの茶室の正しい組み合わせはどれですか。",
+        choices: ["妙喜庵「待庵」・有楽苑「如庵」・大徳寺龍光院「密庵」", "妙喜庵「待庵」・裏千家「今日庵」・表千家「不審菴」", "大徳寺孤篷庵「忘筌」・金地院「八窓席」・高台寺「傘亭」", "慈照寺「同仁斎」・西芳寺「湘南亭」・修学院離宮「窮邃亭」"],
+        answer: 0,
+        explanation: "国宝に指定されている3つの茶室は、千利休作と伝わる妙喜庵「待庵（たいあん）」、織田有楽作の「如庵（じょあん）」、小堀遠州作の大徳寺龍光院「密庵（みったん）」です。"
+      },
+      {
+        id: 117,
+        category: "④ 茶室・露地",
+        question: "草庵茶室の土壁に窓を開ける際、壁土を塗り残して下地の竹小舞（たけこまい：縦横の竹骨と縄）をそのまま格子のように見せた窓を何と呼びますか。",
+        choices: ["下地窓（したじまど）", "連子窓（れんじまど）", "火灯窓（かとうまど）", "突上窓（つきあげまど）"],
+        answer: 0,
+        explanation: "土壁の下地である葦や竹を組んだ部分を塗り残して窓にしたものを「下地窓（したじまど）」といい、外側からは竹や木を縦に並べた「連子窓（れんじまど）」と対比される草庵茶室ならではの意匠です。"
+      },
+      {
+        id: 118,
+        category: "④ 茶室・露地",
+        question: "台目畳の点前座において、客座との境に立てられる袖壁と柱（中柱）の形式で、天井から途中まで壁を垂らし、下部に曲がりくねった自然木の中柱を立てる構造を何と呼びますか。",
+        choices: ["台目構え（だいめがまえ）", "書院構え（しょいんがまえ）", "洞庫構え（どうこがまえ）", "床構え（とこがまえ）"],
+        answer: 0,
+        explanation: "点前座の先端に「中柱（なかばしら）」を立て、上部を塗り壁（火灯口などを開ける）として点前座を半独立の空間にする意匠を「台目構え（だいめがまえ）」といい、千利休以後の小間茶室で大きく発展しました。"
+      },
+      {
+        id: 119,
+        category: "④ 茶室・露地",
+        question: "茶室に切られる「炉（ろ）」の位置について、点前畳の側ではなく客畳の側（点前畳と客畳の間）に炉を切る形式を何と呼びますか。",
+        choices: ["出炉（でろ：四畳半切・台目切など）", "入炉（いりろ：隅炉・向切など）", "大炉（だいろ）", "掘炬燵（ほりごたつ）"],
+        answer: 0,
+        explanation: "点前畳の中に炉を切るものを「入炉（いりろ：向切・隅炉など）」と呼ぶのに対し、点前畳の外（客畳側）に切るものを「出炉（でろ：四畳半切・台目切など）」と呼びます。"
+      },
+      {
+        id: 120,
+        category: "④ 茶室・露地",
+        question: "茶室の床の間において、床框（とこがまち）を省き、床の間の畳の縁や地板を直接座敷の畳と接するようにした、草庵の簡素な床の間を何と呼びますか。",
+        choices: ["踏込床（ふみこみどこ）・蹴込床", "本床（ほんどこ）", "袋床（ふくろどこ）", "洞床（ほらどこ）"],
+        answer: 0,
+        explanation: "床框を用いず地板を張り込んだだけの「踏込床（ふみこみどこ）」や、壁に掛け軸を掛けるだけの「壁床（かべどこ・織部床）」は、極限まで簡素化した小間の床の間形式です。"
+      },
+      {
+        id: 121,
+        category: "④ 茶室・露地",
+        question: "茶室の隣に設けられ、茶道具を収納し、湯水を沸かし、茶碗や懐石の準備・後片付けを行うための部屋を何と呼びますか。",
+        choices: ["水屋（みずや）", "寄付（よりつき）", "鎖の間（くさりのま）", "雪隠（せっちん）"],
+        answer: 0,
+        explanation: "茶事の一切の準備と片付けを行うバックヤードを「水屋（みずや）」といい、水屋瓶、簀子（すのこ）流し、道具棚などが整然と備えられています。"
+      },
+      {
+        id: 122,
+        category: "④ 茶室・露地",
+        question: "露地の「蹲踞（つくばい）」を構成する役石のうち、手水鉢の手前に据えて客が上に乗って身をかがめる石と、冬の茶事で湯桶を置く石、夜咄などで手燭を置く石の名称の組み合わせとして正しいものはどれですか。",
+        choices: ["前石（まえいし）・湯桶石（ゆおけいし）・手燭石（てしょくいし）", "踏石（ふみいし）・釜石（かまいし）・行灯石（あんどんいし）", "乗石（のりいし）・水指石（みずさしいし）・蝋燭石（ろうそくいし）", "客石（きゃくいし）・亭主石（ていしゅいし）・花石（はないし）"],
+        answer: 0,
+        explanation: "蹲踞は中央の手水鉢と水門（海）を囲むように、手前に「前石」、左右に「手燭石」と「湯桶石」を配して構成されます（流派により手燭石と湯桶石の左右が異なります）。"
+      },
+      {
+        id: 123,
+        category: "④ 茶室・露地",
+        question: "露地の飛石（とびいし）の上などに置かれ、そこから先は立ち入らないように（こちらの道へ進むように）客に無言で道筋を示す、棕櫚縄（しゅろなわ）を十字に結んだ小さな石を何と呼びますか。",
+        choices: ["関守石（せきもりいし・留め石）", "手燭石（てしょくいし）", "刀掛石（かたなかけいし）", "駕籠石（かごいし）"],
+        answer: 0,
+        explanation: "丸みのある手頃な石に黒や茶の棕櫚縄を十文字に結んで飛石の上に置いたものを「関守石（せきもりいし）」または「留め石」といい、風雅に通行止め・道案内を示します。"
+      },
+      {
+        id: 124,
+        category: "④ 茶室・露地",
+        question: "露地の躙口（にじりぐち）の外側・軒下などに設けられ、武士が茶室に入る前に大小の刀を外して預けておくための設備は何ですか。",
+        choices: ["刀掛（かたなかけ）", "猿戸（さるど）", "連子窓（れんじまど）", "円窓（えんそう）"],
+        answer: 0,
+        explanation: "千利休は躙口とともに軒下に「刀掛（かたなかけ）」を設け、武士も帯刀を外して一人の人間として茶室に入る「四海皆兄弟・主客平等」の空間を作り上げました。"
+      },
+
+      // ==================== ⑤ 茶席の花・禅語 (全20問: 第1回10問 + 第2回10問) ====================
+      {
+        id: 125,
+        category: "⑤ 茶席の花・禅語",
+        question: "千利休の教えを記した『南方録』の「利休居士わび茶の湯の法」にある、茶花を生ける心得として最も有名な言葉はどれですか。",
+        choices: ["花は野にあるように", "花は華やかに大きく", "花は左右対称に", "花は満開の枝を"],
+        answer: 0,
+        explanation: "『南方録』の「利休七則」のひとつとして「花は野にあるように」が知られます。技巧を凝らしすぎず、自然の野に咲く風情と命の瑞々しさを一輪・二輪に託して生けます。"
+      },
+      {
+        id: 126,
+        category: "⑤ 茶席の花・禅語",
+        question: "茶花として、香りの強すぎる花や、毒のある花、名前や姿が茶席にふさわしくないとされる花を「禁花（きんか）」と呼びますが、次のうち禁花とされるものはどれですか。",
+        choices: ["沈丁花・金木犀", "椿・山茶花", "桔梗・撫子", "梅・柳"],
+        answer: 0,
+        explanation: "沈丁花（じんちょうげ）や金木犀（きんもくせい）などは、釜で焚く香や茶の香りを妨げるほど香りが強いため、茶席の「禁花」とされています（他に曼珠沙華、鶏頭、女郎花なども避けられます）。"
+      },
+      {
+        id: 127,
+        category: "⑤ 茶席の花・禅語",
+        question: "冬の茶席で「茶花の女王」とも呼ばれ、最も好んで生けられる花で、「白玉（しらたま）」「西王母（せいおうぼ）」「侘助（わびすけ）」などの品種がある花は何ですか。",
+        choices: ["椿", "菊", "水仙", "牡丹"],
+        answer: 0,
+        explanation: "「椿（つばき）」は冬から春にかけての茶席に欠かせない茶花で、一重で抱え咲き、まだ蕾（つぼみ）がほころびかけた状態のものが最も珍重されます。"
+      },
+      {
+        id: 128,
+        category: "⑤ 茶席の花・禅語",
+        question: "花入の分類にも「真・行・草」がありますが、青磁や古銅（唐銅）などの格調高い「真の花入」を床の間に飾る際、その下に敷く板は何ですか。",
+        choices: ["矢筈板や蛤端などの薄板（真塗）", "竹の組敷物", "紫の帛紗", "杉の柾目板"],
+        answer: 0,
+        explanation: "花入の下に敷く「薄板（うすいた）」にも真・行・草があり、真の花入（古銅・青磁）には真塗の「矢筈板（やはずいた）」、行の花入（釉薬のある国焼）には「蛤端（はまぐりば）」、草の花入（備前・信楽・竹・籠）には木地の「丸香台」や敷板なしとします。"
+      },
+      {
+        id: 129,
+        category: "⑤ 茶席の花・禅語",
+        question: "茶道の精神を表す四文字で、千利休が説いた「主客が互いに仲良く調和し（和）、敬い合い（敬）、心身ともに清らかで（清）、何事にも動じない静寂な境地（寂）」を表す言葉は何ですか。",
+        choices: ["和敬清寂", "一期一会", "日日是好日", "茶禅一味"],
+        answer: 0,
+        explanation: "「和敬清寂（わけいせいじゃく）」は茶道の根本精神を四文字に凝縮した言葉です。"
+      },
+      {
+        id: 130,
+        category: "⑤ 茶席の花・禅語",
+        question: "幕末の大老で茶人としても知られる井伊直弼（宗観）が著した『茶湯一会集』の冒頭に記され、「この茶会は生涯にただ一度きりの出会いであると心得て、主客ともに誠を尽くす」という意味の言葉は何ですか。",
+        choices: ["一期一会", "直心是道場", "喫茶去", "柳緑花紅"],
+        answer: 0,
+        explanation: "山上宗二の「一期に一度の会」という言葉を受け、井伊直弼が『茶湯一会集』の巻頭で「茶湯の交会は、一期一会といひて…」と説いたことで広く知られるようになりました。"
+      },
+      {
+        id: 131,
+        category: "⑤ 茶席の花・禅語",
+        question: "唐代の禅僧・雲門文偃（うんもんぶんえん）の言葉に由来し、「嬉しい日も悲しい日も、晴れの日も雨の日も、今この瞬間を精一杯生きれば毎日がかけがえのない好日である」という意味の禅語は何ですか。",
+        choices: ["日日是好日", "白雲自去来", "松風颯颯声", "清風払明月"],
+        answer: 0,
+        explanation: "『碧巌録』第六則に収められた雲門禅師の「日日是好日（にちにちこれこうじつ）」は、季節を問わず茶席で最もよく掛けられる禅語のひとつです。"
+      },
+      {
+        id: 132,
+        category: "⑤ 茶席の花・禅語",
+        question: "唐代の禅僧・趙州従諗（じょうしゅうじゅうしん）が、かつてここに来たことがある修行僧にも、初めて来た修行僧にも同じように「まあ、お茶をおあがりなさい」と声をかけたという逸話に由来する三文字の禅語は何ですか。",
+        choices: ["喫茶去", "主人公", "無一物", "破顔微笑"],
+        answer: 0,
+        explanation: "趙州禅師の「喫茶去（きっさこ）」は、分け隔てのない絶対平等の仏心を表す公案として、茶席で非常に大切にされる禅語です。"
+      },
+      {
+        id: 133,
+        category: "⑤ 茶席の花・禅語",
+        question: "春の茶席によく掛けられる禅語で、蘇東坡の詩などにも見られる「柳は緑であり、花は紅である（自然のまま、ありのままの姿こそが真理である）」という意味の言葉は何ですか。",
+        choices: ["柳緑花紅", "紅葉満山", "滝直下三千丈", "雲悠々水潺々"],
+        answer: 0,
+        explanation: "「柳緑花紅（りゅうりょくかこう／やなぎはみどり はなはくれない）」は、春の情景とともに、作為のない自然の真理を表す禅語として春席に好まれます。"
+      },
+      {
+        id: 134,
+        category: "⑤ 茶席の花・禅語",
+        question: "盛夏（7月〜8月）の茶席に掛けられる言葉で、李白の「廬山の瀑布を望む」という漢詩に由来し、激しい滝の流れによって涼しさを感じさせる語句はどれですか。",
+        choices: ["飛流直下三千丈", "春風吹又生", "秋声満万戸", "雪月花"],
+        answer: 0,
+        explanation: "「飛流直下三千丈（ひりゅうちょっかさんぜんじょう）」や「滝（瀑）」の一字幅は、厳しい暑さの盛夏に視覚と心で涼を呼ぶ代表的な夏掛けです。"
+      },
+      {
+        id: 135,
+        category: "⑤ 茶席の花・禅語",
+        question: "初冬（11月の炉開きや12月）の茶席でよく掛けられる禅語で、白居易（白楽天）の詩句に由来する「紅葉を焚いて酒を温め、あるいは釜の湯を沸かす」風流な情景を表した言葉はどれですか。",
+        choices: ["林間暖酒焼紅葉", "薫風自南来", "夏雲多奇峰", "春入千林処々花"],
+        answer: 0,
+        explanation: "白居易（白楽天）の詩句「林間酒を暖めて紅葉を焼く（りんかんさけをあたためてこうようをたく）」は、晩秋から初冬（10月〜11月）の茶席に好まれる名句です。"
+      },
+      {
+        id: 136,
+        category: "⑤ 茶席の花・禅語",
+        question: "初夏（5月の風炉の時期など）の茶席で最も好まれる禅語で、「新緑の爽やかな風が南から吹いてきて、宮殿の閣に微かな涼を生ずる」という意味の五文字の言葉は何ですか。",
+        choices: ["薫風自南来", "秋菊有佳色", "紅炉一点雪", "梅花和雪香"],
+        answer: 0,
+        explanation: "「薫風自南来（くんぷうみなみよりきたる）」は、5月の初風炉の季節感と禅の爽快な悟りの境地を表す代表的な一行物です。"
+      },
+      {
+        id: 137,
+        category: "⑤ 茶席の花・禅語",
+        question: "初夏から夏の茶席において、天井の蛭釘（ひるくぎ）から鎖などで吊るし、舟の形をした竹や唐銅、砂張（さはり）の花入に草花を生けるものを何と呼びますか。",
+        choices: ["釣舟（つりぶね）花入", "尺八（しゃくはち）花入", "鶴首（つるくび）花入", "砧（きぬた）花入"],
+        answer: 0,
+        explanation: "舟形の花入を鎖で吊るす「釣舟（つりぶね）」は、空間に涼風と水辺の情趣を運ぶ花入として5月〜8月頃に好んで用いられます。向きの掛け方によって「出舟」「入舟」「泊舟」の趣向があります。"
+      },
+      {
+        id: 138,
+        category: "⑤ 茶席の花・禅語",
+        question: "初夏に清楚な白い五弁の花を咲かせるツバキ科の落葉高木で、平家物語の「沙羅双樹の花の色」になぞらえて茶席で深く愛される茶花は何ですか。",
+        choices: ["夏椿（なつつばき・沙羅の花）", "金木犀（きんもくせい）", "彼岸花（ひがんばな）", "夾竹桃（きょうちくとう）"],
+        answer: 0,
+        explanation: "朝に咲いて夕べには散る一日花の「夏椿（なつつばき）」は、別名「沙羅（さら）の木」とも呼ばれ、6月頃の茶席で最も尊ばれる茶花のひとつです。"
+      },
+      {
+        id: 139,
+        category: "⑤ 茶席の花・禅語",
+        question: "初夏から秋の茶席に好まれる茶花で、アオイ科の落葉低木であり、朝に咲いて夕方にはしぼむ一日花であることから「槿花一日の栄」などの言葉でも知られる花は何ですか。",
+        choices: ["宗旦木槿（そうたんむくげ）などの木槿", "仙人草（せんにんそう）", "福寿草（ふくじゅそう）", "水仙（すいせん）"],
+        answer: 0,
+        explanation: "木槿（むくげ）、とりわけ白地に底紅（そこべに）の一重咲きである「宗旦木槿（そうたんむくげ）」や真っ白な「祇園守」は、夏の茶席を代表する茶花です。"
+      },
+      {
+        id: 140,
+        category: "⑤ 茶席の花・禅語",
+        question: "正月（初釜など）の床の間に、掛物とともに青竹の花入（鶴首や寸胴など）に生けて飾られる、縁起のよい花と木の枝の組み合わせは何ですか。",
+        choices: ["柳（結び柳・غ柳）と白椿（または紅白の椿）", "桜と紅葉", "向日葵と朝顔", "芒（すすき）と吾亦紅"],
+        answer: 0,
+        explanation: "初釜や正月の茶席では、長い青竹の柳（結び柳・垂れ柳）と、清らかな白椿（または紅白の椿）を取り合わせて生けるのが伝統的な祝いの花です。"
+      },
+      {
+        id: 141,
+        category: "⑤ 茶席の花・禅語",
+        question: "『維摩経（ゆいまぎょう）』に由来し、「飾り気のない素直で真っ直ぐな心（直心）で向き合うならば、今いるその場所がそのまま悟りの道場（茶席）である」という意味の五文字の禅語は何ですか。",
+        choices: ["直心是道場", "無事是貴人", "行雲流水", "心外無別法"],
+        answer: 0,
+        explanation: "「直心是道場（じきしんこれどうじょう）」は、村田珠光や千利休も重んじた言葉で、偽りのない真心こそが茶道の根本であることを示します。"
+      },
+      {
+        id: 142,
+        category: "⑤ 茶席の花・禅語",
+        question: "『臨済録』にある言葉で、外に向かって仏や悟りを求めず、名利や執着を離れたありのままの平穏な人こそが尊い人であるという意味の禅語（歳末にもよく掛けられる言葉）は何ですか。",
+        choices: ["無事是貴人", "百花為誰開", "山是山水是水", "看脚下"],
+        answer: 0,
+        explanation: "「無事是貴人（ぶじこれきにん）」や「無事」の二字幅は、本来の自己に立ち返る禅語であるとともに、一年を息災に過ごせた感謝を込めて12月（師走）の茶席にもよく掛けられます。"
+      },
+      {
+        id: 143,
+        category: "⑤ 茶席の花・禅語",
+        question: "禅宗の根本立場を表す四字熟語で、「文字や言葉による説明に頼らず（不立文字）、師の心から弟子の心へと直接悟りを伝える」という意味の言葉は何ですか。",
+        choices: ["以心伝心（不立文字・教外別伝）", "温故知新", "花鳥風月", "切磋琢磨"],
+        answer: 0,
+        explanation: "「不立文字（ふりゅうもんじ）・教外別伝（きょうげべつでん）・直指人心（じきしにんしん）・見性成仏（けんしょうじょうぶつ）」および「以心伝心（いしんでんしん）」は禅の要諦であり、茶の湯の主客の交わりにも通じる言葉です。"
+      },
+      {
+        id: 144,
+        category: "⑤ 茶席の花・禅語",
+        question: "茶室で湯が沸く釜の音を、松林を吹き抜ける爽やかな風の音になぞらえて表現した茶の湯の言葉（また禅語「○○颯颯声」にも用いられる二文字）は何ですか。",
+        choices: ["松風（しょうふう・まつかぜ）", "潮騒（しおさい）", "雷鳴（らいめい）", "春雨（はるさめ）"],
+        answer: 0,
+        explanation: "茶の湯では釜の煮える音を「松風（まつかぜ・しょうふう）」と雅に呼び、「松風颯颯声（しょうふうさっさつのこえ）」「聴松風」などの禅語も茶席で好まれます。"
+      },
+
+      // ==================== ⑥ 懐石・菓子 (全16問: 第1回8問 + 第2回8問) ====================
+      {
+        id: 145,
+        category: "⑥ 懐石・菓子",
+        question: "濃茶を美味しくいただくために出される軽い食事を「懐石（かいせき）」と呼びますが、この言葉の語源となった禅寺の修行僧の習慣はどれですか。",
+        choices: ["寒さや空腹をしのぐため、温めた石（温石）を懐（ふところ）に入れて抱いたこと", "庭の美しい石を眺めながら食事をしたこと", "石の器に飯を盛って食べたこと", "石臼で茶を挽いた後に食事をとったこと"],
+        answer: 0,
+        explanation: "禅宗の修行僧が、坐禅中の寒さや空腹をしのぐために温めた石（温石）を懐に入れた故事から、茶事における一汁三菜の質素で温かい食事を「懐石」と呼ぶようになりました。"
+      },
+      {
+        id: 146,
+        category: "⑥ 懐石・菓子",
+        question: "懐石の基本構成である「一汁三菜」において、最初に折敷（おしき）に載せて客の前に運び出される3つの器は何ですか。",
+        choices: ["飯椀・汁椀・向付", "飯椀・煮物椀・焼物", "汁椀・八寸・強肴", "飯椀・吸物・香の物"],
+        answer: 0,
+        explanation: "折敷（膳）の手前左に「飯椀（めしわん）」、手前右に「汁椀（しるわん）」、奥の中央または右奥に「向付（むこうづけ）」を載せ、利休箸を添えて持ち出します。"
+      },
+      {
+        id: 147,
+        category: "⑥ 懐石・菓子",
+        question: "懐石の「一汁三菜」における『三菜』とは、一般的にどの料理を指しますか。",
+        choices: ["向付・煮物椀・焼物", "向付・八寸・香の物", "煮物椀・吸物・湯斗", "焼物・強肴・主菓子"],
+        answer: 0,
+        explanation: "一汁（汁椀）に対し、三菜は「向付（季節の魚介の膾や刺身など）」「煮物椀（懐石の主菜となる椀盛）」「焼物（焼き魚など）」の3品を指します。"
+      },
+      {
+        id: 148,
+        category: "⑥ 懐石・菓子",
+        question: "懐石において、一汁三菜がひと通り済んだ後、折敷の中の器（飯椀・汁椀など）の露を切るために出される、小さな吸い物は何ですか。",
+        choices: ["小吸物（箸洗）", "湯斗", "預鉢", "引盃"],
+        answer: 0,
+        explanation: "八寸（酒肴）の前に出される小さな椀の吸い物を「小吸物（こすいもの）」または箸を清める意味から「箸洗（はしあらい）」といいます。"
+      },
+      {
+        id: 149,
+        category: "⑥ 懐石・菓子",
+        question: "懐石の後半、亭主と客が酒を酌み交わす際に出される、約24cm（八寸）四方の杉木地の折敷に「海の幸」と「山の幸」の2種を盛り合わせた酒肴を何と呼びますか。",
+        choices: ["八寸", "向付", "強肴", "取肴"],
+        answer: 0,
+        explanation: "八寸四方の杉の縁高盆に、海の幸（手前）と山の幸（奥）を1種ずつ盛り合わせる料理を、器の名から「八寸（はっすん）」と呼びます。"
+      },
+      {
+        id: 150,
+        category: "⑥ 懐石・菓子",
+        question: "懐石の締めくくりに、飯椀や汁椀をきれいに清めていただくため、焦がし米（炒り米）に塩味をつけた湯を入れて持ち出される器と、同時に出される漬物の組み合わせはどれですか。",
+        choices: ["湯斗（ゆとう）と香の物", "水次と主菓子", "燗鍋と八寸", "片口と小吸物"],
+        answer: 0,
+        explanation: "懐石の最後には「湯斗（ゆとう：焦がし湯が入った漆器）」と「香の物（沢庵などの漬物）」が出され、客は香の物で椀を拭い、湯を注いですべてきれいにいただきます。"
+      },
+      {
+        id: 151,
+        category: "⑥ 懐石・菓子",
+        question: "懐石の折敷に添えられる、両端を細く削った杉の白木の箸を何と呼びますか。",
+        choices: ["利休箸（両細箸）", "青竹箸", "黒文字", "柳箸"],
+        answer: 0,
+        explanation: "杉の柾目を割り、中央を平たく両端を細く削った箸は、千利休が茶事の朝に客の人数分削ったことから「利休箸（りきゅうばし）」または「両細（りょうぼそ）」と呼ばれます。使用前に湿らせておきます。"
+      },
+      {
+        id: 152,
+        category: "⑥ 懐石・菓子",
+        question: "茶席で出される菓子には「主菓子（おもがし）」と「干菓子（ひがし）」がありますが、それぞれが出されるタイミングとして正しいものはどれですか。",
+        choices: ["主菓子は「濃茶」の前に出され、干菓子は「薄茶」の前に出される", "主菓子は「薄茶」の前に出され、干菓子は「濃茶」の前に出される", "主菓子も干菓子も「懐石」の前に一度に出される", "主菓子は「濃茶」の後に出され、干菓子は退出時に土産として渡される"],
+        answer: 0,
+        explanation: "水分を多く含む生菓子である「主菓子」は濃茶の前に、落雁や有平糖などの「干菓子」は薄茶の前（または薄茶席）に出されます。"
+      },
+      {
+        id: 153,
+        category: "⑥ 懐石・菓子",
+        question: "主菓子（生菓子）を盛り付ける器として、一人分ずつ蓋付きの漆器に盛って重ねて持ち出す、最も格式の高い器は何ですか。",
+        choices: ["縁高", "喰籠", "四方盆", "高坏"],
+        answer: 0,
+        explanation: "五客分などの段重ねになっており、一番上に蓋をして黒文字を載せて持ち出す一人分ずつの菓子器を「縁高（ふちだか）」といいます。陶磁器や漆器の蓋物で取り回すものは「喰籠（じきろう）」です。"
+      },
+      {
+        id: 154,
+        category: "⑥ 懐石・菓子",
+        question: "主菓子をいただく際に添えられる、クスノキ科の香木の枝を削って作られた楊枝（菓子切り）を何と呼びますか。",
+        choices: ["黒文字", "利休箸", "青竹箸", "茶杓"],
+        answer: 0,
+        explanation: "樹皮に黒い斑点があり、爽やかな芳香を持つクスノキ科の低木から作られる楊枝を「黒文字（くろもじ）」といいます。主菓子には湿らせた黒文字を添えます。"
+      },
+      {
+        id: 155,
+        category: "⑥ 懐石・菓子",
+        question: "6月30日の「夏越の祓（なごしのはらえ）」の頃に茶席で用いられる、白いういろう生地の上に氷片を表して三角形に切り、魔除けの小豆をのせた京都の代表的な主菓子は何ですか。",
+        choices: ["水無月", "亥の子餅", "花びら餅", "椿餅"],
+        answer: 0,
+        explanation: "6月の異称でもある「水無月（みなづき）」は、氷室の氷を模した三角形のういろうに邪気払いの小豆をのせた夏越の節目の主菓子です。"
+      },
+      {
+        id: 156,
+        category: "⑥ 懐石・菓子",
+        question: "正月の「初釜（はつがま）」で必ずと言ってよいほど用いられる、丸い白餅（または求肥）に菱形の紅餅を重ね、白味噌餡と蜜煮の牛蒡（ごぼう）を挟んで二つ折りにした主菓子は何ですか。",
+        choices: ["花びら餅（菱葩餅）", "水無月", "亥の子餅", "柏餅"],
+        answer: 0,
+        explanation: "宮中の正月行事「歯固め」の儀式に由来する「花びら餅（菱葩餅・ひしはなびらもち）」は、明治時代に裏千家が初釜の主菓子として用いることを許されて以来、新年の茶席を代表する菓子となりました。"
+      },
+      {
+        id: 157,
+        category: "⑥ 懐石・菓子",
+        question: "11月（亥の月）の「炉開き」の茶席で好んで用いられ、無病息災や火防せ（火災除け）の願いが込められた、イノシシの子の形を模した餅菓子は何ですか。",
+        choices: ["亥の子餅（いのこもち）", "椿餅（つばきもち）", "桜餅（さくらもち）", "葛饅頭（くずまんじゅう）"],
+        answer: 0,
+        explanation: "陰陽五行説で「亥（いのしし）」は水性に属し火に克つとされるため、11月（旧暦10月亥の月）の炉開きには火災除けと無病息災を祈って「亥の子餅」が用いられます。"
+      },
+      {
+        id: 158,
+        category: "⑥ 懐石・菓子",
+        question: "平安時代の『源氏物語』（若菜上）にも登場し、道明寺糒（どうみょうじほしい）で餡を包んで上下を2枚のツバキの葉で挟んだ、日本最古級の伝統を持つ生菓子は何ですか。",
+        choices: ["椿餅（つばきもち）", "草餅（くさもち）", "唐果物（からくだもの）", "羊羹（ようかん）"],
+        answer: 0,
+        explanation: "甘葛（あまづら）や砂糖で甘みをつけた道明寺を椿の青葉で挟んだ「椿餅（つばきもち）」は、王朝時代から伝わる日本最古級の餅菓子で、2月頃の茶席で好まれます。"
+      },
+      {
+        id: 159,
+        category: "⑥ 懐石・菓子",
+        question: "薄茶の前に出される「干菓子（ひがし）」の一種で、安土桃山時代にポルトガル人から伝わった「アルフェロア」を語源とし、砂糖と水飴を煮詰めて細工した飴菓子は何ですか。",
+        choices: ["有平糖（ありへいとう）", "落雁（らくがん）", "雲平（うんぺい）", "おこし"],
+        answer: 0,
+        explanation: "南蛮菓子に由来する「有平糖（ありへいとう・アルヘイトウ）」は、砂糖と水飴を煮詰めて引き伸ばし、季節の花や千代結びなどを美しく造形した干菓子で、打ち物（落雁）と取り合わせて干菓子器に盛られます。"
+      },
+      {
+        id: 160,
+        category: "⑥ 懐石・菓子",
+        question: "懐石において、客全員の料理を1つの大きな鉢に盛り付け、客同士が取り回して分け合うために出される料理（強肴や焼物など）の器を何と呼びますか。",
+        choices: ["預け鉢（あずけばち）・進鉢（すすめばち）", "向付（むこうづけ）", "飯器（はんき）", "汁次（しるつぎ）"],
+        answer: 0,
+        explanation: "客全員分を大鉢や皿に盛り合わせて客席に預け、正客から順次取り分ける器を「預け鉢（あずけばち）」または「進鉢（すすめばち）」といいます。"
+      }
+    ];
+
+    // Assign Exam Set (Mock 1: 80 questions / Mock 2: 80 questions, perfectly balanced across all 6 categories)
+    // And deterministically rotate choices so correct answers are evenly distributed among イ, ロ, ハ, ニ
+    const QUESTIONS_DATA = (() => {
+      const catCounts = {};
+      const catLimitsForMock1 = {
+        "① 茶の歴史": 17,
+        "② 茶事・茶会": 13,
+        "③ 茶道具": 20,
+        "④ 茶室・露地": 12,
+        "⑤ 茶席の花・禅語": 10,
+        "⑥ 懐石・菓子": 8
+      };
+
+      return RAW_QUESTIONS_DATA.map((item) => {
+        catCounts[item.category] = (catCounts[item.category] || 0) + 1;
+        const examSet = catCounts[item.category] <= catLimitsForMock1[item.category] ? 1 : 2;
+
+        // Deterministic rotation based on question id so answer is distributed evenly across 0, 1, 2, 3
+        const shift = (item.id * 3 + 1) % 4;
+        const origCorrectText = item.choices[item.answer];
+        const rotatedChoices = [];
+        for (let i = 0; i < 4; i++) {
+          rotatedChoices[(i + shift) % 4] = item.choices[i];
+        }
+        const newAnswer = rotatedChoices.indexOf(origCorrectText);
+
+        return {
+          ...item,
+          examSet,
+          choices: rotatedChoices,
+          answer: newAnswer
+        };
+      });
+    })();
+
+    const CATEGORIES = [
+      { id: "① 茶の歴史", desc: "栄西・珠光・紹鴎・利休・織部・遠州・三千家・茶書", icon: "📜" },
+      { id: "② 茶事・茶会", desc: "正午の茶事・炉開き・夜咄・七事式・客の作法", icon: "🕯️" },
+      { id: "③ 茶道具", desc: "茶碗・茶入・棗・茶杓・釜・千家十職・花入・香合", icon: "🍵" },
+      { id: "④ 茶室・露地", desc: "国宝三茶室・忘筌・躙口・台目構・蹲踞・飛石", icon: "🏡" },
+      { id: "⑤ 茶席の花・禅語", desc: "茶花の心得・禁花・薄板・和敬清寂・季節の禅語", icon: "🌸" },
+      { id: "⑥ 懐石・菓子", desc: "一汁三菜・八寸・湯斗・主菓子・干菓子・季節銘菓", icon: "🍱" }
+    ];
+
+    const STORAGE_KEY = "chado_kentei_level3_state_160_v2";
+
+    const app = {
+      state: {
+        // { [questionId]: { status: 'correct' | 'wrong', bookmarked: boolean } }
+        records: {},
+        mockBestScores: {
+          mock1: null,
+          mock2: null,
+          mock_shuffle: null
+        }
+      },
+      quizSession: {
+        modeKey: "",
+        modeTitle: "",
+        isMockExam: false,
+        questions: [],
+        currentIndex: 0,
+        answeredInSession: {}, // { [questionId]: selectedChoiceIndex }
+        correctCount: 0,
+        answeredCount: 0
+      },
+      timer: {
+        intervalId: null,
+        remainingSeconds: 4800,
+        paused: false
+      },
+      dictShowAllExplanations: false,
+
+      init() {
+        this.loadState();
+        this.setupKeyboardShortcuts();
+        this.renderDashboard();
+        this.renderDictionary();
+      },
+
+      setupKeyboardShortcuts() {
+        window.addEventListener("keydown", (e) => {
+          const quizView = document.getElementById("view-quiz");
+          if (!quizView || quizView.classList.contains("hidden")) return;
+          if (["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) return;
+
+          const session = this.quizSession;
+          const q = session.questions[session.currentIndex];
+          if (!q) return;
+          const isAnswered = session.answeredInSession[q.id] !== undefined;
+
+          if (!isAnswered && ["1", "2", "3", "4"].includes(e.key)) {
+            e.preventDefault();
+            this.selectAnswer(parseInt(e.key, 10) - 1);
+          } else if (isAnswered && (e.key === "Enter" || e.key === " ")) {
+            e.preventDefault();
+            this.nextQuestion();
+          }
+        });
+      },
+
+      loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (parsed && parsed.records) {
+              this.state.records = parsed.records;
+            }
+            if (parsed && parsed.mockBestScores) {
+              this.state.mockBestScores = { ...this.state.mockBestScores, ...parsed.mockBestScores };
+            }
+          }
+        } catch (e) {
+          console.error("Failed to load state", e);
+        }
+      },
+
+      saveState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(this.state));
+        } catch (e) {
+          console.error("Failed to save state", e);
+        }
+      },
+
+      getRecord(qId) {
+        return this.state.records[qId] || { status: null, bookmarked: false };
+      },
+
+      setRecord(qId, updates) {
+        const current = this.getRecord(qId);
+        this.state.records[qId] = { ...current, ...updates };
+        this.saveState();
+      },
+
+      // ==================== TIMER FOR 80-QUESTION MOCK EXAMS ====================
+      startTimer(seconds = 4800) {
+        this.stopTimer();
+        this.timer.remainingSeconds = seconds;
+        this.timer.paused = false;
+        const timerBox = document.getElementById("quiz-timer-box");
+        timerBox.classList.remove("hidden");
+        timerBox.classList.add("flex");
+        this.updateTimerDisplay();
+
+        this.timer.intervalId = setInterval(() => {
+          if (!this.timer.paused && this.timer.remainingSeconds > 0) {
+            this.timer.remainingSeconds--;
+            this.updateTimerDisplay();
+          }
+        }, 1000);
+      },
+
+      stopTimer() {
+        if (this.timer.intervalId) {
+          clearInterval(this.timer.intervalId);
+          this.timer.intervalId = null;
+        }
+        const timerBox = document.getElementById("quiz-timer-box");
+        if (timerBox) {
+          timerBox.classList.add("hidden");
+          timerBox.classList.remove("flex");
+        }
+      },
+
+      toggleTimerPause() {
+        this.timer.paused = !this.timer.paused;
+        const btn = document.getElementById("btn-timer-pause");
+        if (btn) {
+          btn.textContent = this.timer.paused ? "再開" : "一時停止";
+        }
+      },
+
+      updateTimerDisplay() {
+        const mins = Math.floor(this.timer.remainingSeconds / 60);
+        const secs = this.timer.remainingSeconds % 60;
+        const el = document.getElementById("quiz-timer-display");
+        if (el) {
+          el.textContent = `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+        }
+      },
+
+      showView(viewName) {
+        if (viewName !== "quiz") {
+          this.stopTimer();
+        }
+        const views = ["dashboard", "quiz", "result", "dictionary"];
+        views.forEach(v => {
+          const el = document.getElementById(`view-${v}`);
+          if (el) el.classList.add("hidden");
+        });
+        const target = document.getElementById(`view-${viewName}`);
+        if (target) target.classList.remove("hidden");
+
+        // Update nav active states
+        const navDash = document.getElementById("nav-dashboard");
+        const navDict = document.getElementById("nav-dictionary");
+        if (viewName === "dictionary") {
+          navDict.className = "px-3 py-1.5 rounded-md font-medium transition bg-matcha text-washi";
+          navDash.className = "px-3 py-1.5 rounded-md font-medium transition text-washi/80 hover:text-washi hover:bg-white/10";
+          this.renderDictionary();
+        } else {
+          navDash.className = "px-3 py-1.5 rounded-md font-medium transition bg-matcha text-washi";
+          navDict.className = "px-3 py-1.5 rounded-md font-medium transition text-washi/80 hover:text-washi hover:bg-white/10";
+          if (viewName === "dashboard") {
+            this.renderDashboard();
+          }
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      },
+
+      renderDashboard() {
+        let answered = 0;
+        let correct = 0;
+        let wrong = 0;
+        let bookmarked = 0;
+        let reviewAllSet = new Set();
+
+        QUESTIONS_DATA.forEach(q => {
+          const rec = this.getRecord(q.id);
+          if (rec.status === "correct") {
+            answered++;
+            correct++;
+          } else if (rec.status === "wrong") {
+            answered++;
+            wrong++;
+            reviewAllSet.add(q.id);
+          }
+          if (rec.bookmarked) {
+            bookmarked++;
+            reviewAllSet.add(q.id);
+          }
+        });
+
+        const totalQuestions = QUESTIONS_DATA.length; // 160
+        const progressPct = Math.round((answered / totalQuestions) * 100);
+        const accuracy = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+
+        document.getElementById("stat-answered").textContent = answered;
+        document.getElementById("stat-progress-pct").textContent = `${progressPct}%`;
+        document.getElementById("stat-correct").textContent = correct;
+        document.getElementById("stat-accuracy").textContent = `${accuracy}%`;
+        document.getElementById("stat-wrong").textContent = wrong;
+        document.getElementById("stat-bookmarked").textContent = bookmarked;
+
+        // Mock Exam Best Score Badges
+        const formatMockBadge = (score) => {
+          if (score === null || score === undefined) return "未受験";
+          const passed = score >= 56;
+          return `最高 ${score}/80問 (${passed ? "合格圏" : "あと一歩"})`;
+        };
+        document.getElementById("mock1-best-badge").textContent = formatMockBadge(this.state.mockBestScores.mock1);
+        document.getElementById("mock2-best-badge").textContent = formatMockBadge(this.state.mockBestScores.mock2);
+        document.getElementById("mockShuffle-best-badge").textContent = formatMockBadge(this.state.mockBestScores.mock_shuffle);
+
+        document.getElementById("count-review-all").textContent = reviewAllSet.size;
+        document.getElementById("count-review-bookmark").textContent = bookmarked;
+
+        const btnReviewAll = document.getElementById("btn-review-all");
+        btnReviewAll.disabled = reviewAllSet.size === 0;
+        btnReviewAll.classList.toggle("opacity-50", reviewAllSet.size === 0);
+        btnReviewAll.classList.toggle("cursor-not-allowed", reviewAllSet.size === 0);
+
+        const btnBookmark = document.getElementById("btn-review-bookmark");
+        btnBookmark.disabled = bookmarked === 0;
+        btnBookmark.classList.toggle("opacity-50", bookmarked === 0);
+        btnBookmark.classList.toggle("cursor-not-allowed", bookmarked === 0);
+
+        const unansweredCount = totalQuestions - answered;
+        const btnUnanswered = document.getElementById("btn-unanswered");
+        btnUnanswered.textContent = unansweredCount > 0 ? `未解答から始める（残り${unansweredCount}問）` : "全160問 解答済み";
+        btnUnanswered.disabled = unansweredCount === 0;
+        btnUnanswered.classList.toggle("opacity-50", unansweredCount === 0);
+
+        // Render Category Cards
+        const grid = document.getElementById("category-grid");
+        grid.innerHTML = "";
+        CATEGORIES.forEach(cat => {
+          const catQuestions = QUESTIONS_DATA.filter(q => q.category === cat.id);
+          const total = catQuestions.length;
+          let catCorrect = 0;
+          let catAnswered = 0;
+          catQuestions.forEach(q => {
+            const r = this.getRecord(q.id);
+            if (r.status === "correct") {
+              catCorrect++;
+              catAnswered++;
+            } else if (r.status === "wrong") {
+              catAnswered++;
+            }
+          });
+          const pct = Math.round((catCorrect / total) * 100);
+
+          const card = document.createElement("div");
+          card.className = "bg-white rounded-xl japanese-border p-4 hover:border-matcha transition cursor-pointer flex flex-col justify-between group";
+          card.onclick = () => this.startCategoryQuiz(cat.id);
+
+          card.innerHTML = `
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-mincho font-bold text-base text-sumi group-hover:text-matcha transition flex items-center gap-1.5">
+                  <span>${cat.icon}</span> ${cat.id}
+                </span>
+                <span class="text-xs font-medium text-rikyu">全${total}問</span>
+              </div>
+              <p class="text-xs text-rikyu mb-3">${cat.desc}</p>
+            </div>
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-rikyu">習得率: <strong class="text-matcha">${pct}%</strong> (${catCorrect}/${total}問)</span>
+                <span class="text-matcha font-medium group-hover:translate-x-0.5 transition">演習する →</span>
+              </div>
+              <div class="w-full h-2 bg-stone-200 rounded-full overflow-hidden">
+                <div class="h-full bg-matcha transition-all duration-500" style="width: ${pct}%"></div>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      },
+
+      shuffleArray(arr) {
+        const copy = [...arr];
+        for (let i = copy.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [copy[i], copy[j]] = [copy[j], copy[i]];
+        }
+        return copy;
+      },
+
+      buildBalanced80Shuffle() {
+        const quotas = {
+          "① 茶の歴史": 17,
+          "② 茶事・茶会": 13,
+          "③ 茶道具": 20,
+          "④ 茶室・露地": 12,
+          "⑤ 茶席の花・禅語": 10,
+          "⑥ 懐石・菓子": 8
+        };
+        let result = [];
+        Object.keys(quotas).forEach(cat => {
+          const pool = QUESTIONS_DATA.filter(q => q.category === cat);
+          const picked = this.shuffleArray(pool).slice(0, quotas[cat]);
+          result = result.concat(picked);
+        });
+        return result;
+      },
+
+      startQuiz(mode, startQuestionId = null) {
+        let selected = [];
+        let title = "";
+        let isMockExam = false;
+
+        if (mode === "mock1") {
+          selected = QUESTIONS_DATA.filter(q => q.examSet === 1);
+          title = "第1回 本番模擬試験（全80問・合格基準56問）";
+          isMockExam = true;
+        } else if (mode === "mock2") {
+          selected = QUESTIONS_DATA.filter(q => q.examSet === 2);
+          title = "第2回 本番模擬試験（全80問・合格基準56問）";
+          isMockExam = true;
+        } else if (mode === "mock_shuffle") {
+          selected = this.buildBalanced80Shuffle();
+          title = "ランダム80問 総合シャッフル本模試";
+          isMockExam = true;
+        } else if (mode === "all") {
+          selected = [...QUESTIONS_DATA];
+          title = "全160問 通し稽古";
+        } else if (mode === "unanswered") {
+          selected = QUESTIONS_DATA.filter(q => !this.getRecord(q.id).status);
+          title = "未解答問題 集中稽古";
+        } else if (mode === "random10") {
+          selected = this.shuffleArray(QUESTIONS_DATA).slice(0, 10);
+          title = "ランダム10問 スピード稽古";
+        } else if (mode === "random25") {
+          selected = this.shuffleArray(QUESTIONS_DATA).slice(0, 25);
+          title = "ランダム25問 実力稽古";
+        } else if (mode === "review_all") {
+          selected = QUESTIONS_DATA.filter(q => {
+            const r = this.getRecord(q.id);
+            return r.status === "wrong" || r.bookmarked;
+          });
+          title = "誤答・要復習しおり 弱点克服";
+        } else if (mode === "bookmarked") {
+          selected = QUESTIONS_DATA.filter(q => this.getRecord(q.id).bookmarked);
+          title = "要復習しおり 厳選稽古";
+        }
+
+        if (selected.length === 0) return;
+
+        let startIndex = 0;
+        if (startQuestionId !== null) {
+          const idx = selected.findIndex(q => q.id === startQuestionId);
+          if (idx >= 0) startIndex = idx;
+        }
+
+        this.quizSession = {
+          modeKey: mode,
+          modeTitle: title,
+          isMockExam,
+          questions: selected,
+          currentIndex: startIndex,
+          answeredInSession: {},
+          correctCount: 0,
+          answeredCount: 0
+        };
+
+        this.showView("quiz");
+        if (isMockExam) {
+          this.startTimer(80 * 60);
+        } else {
+          this.stopTimer();
+        }
+        this.renderCurrentQuestion();
+      },
+
+      startCategoryQuiz(categoryName) {
+        const selected = QUESTIONS_DATA.filter(q => q.category === categoryName);
+        this.quizSession = {
+          modeKey: "category",
+          modeTitle: `分野別演習：${categoryName}`,
+          isMockExam: false,
+          questions: selected,
+          currentIndex: 0,
+          answeredInSession: {},
+          correctCount: 0,
+          answeredCount: 0
+        };
+        this.stopTimer();
+        this.showView("quiz");
+        this.renderCurrentQuestion();
+      },
+
+      renderCurrentQuestion() {
+        const session = this.quizSession;
+        const q = session.questions[session.currentIndex];
+        if (!q) return;
+
+        const rec = this.getRecord(q.id);
+
+        document.getElementById("quiz-mode-title").textContent = session.modeTitle;
+        document.getElementById("quiz-current-index").textContent = session.currentIndex + 1;
+        document.getElementById("quiz-total-count").textContent = session.questions.length;
+        document.getElementById("quiz-session-correct").textContent = session.correctCount;
+        document.getElementById("quiz-session-answered").textContent = session.answeredCount;
+
+        const progressPct = Math.round(((session.currentIndex + 1) / session.questions.length) * 100);
+        document.getElementById("quiz-progress-bar").style.width = `${progressPct}%`;
+
+        document.getElementById("quiz-q-number").textContent = `第${q.id}問`;
+        document.getElementById("quiz-q-category").textContent = q.category;
+        document.getElementById("quiz-q-examset").textContent = `第${q.examSet}回模試収録`;
+        document.getElementById("quiz-q-text").textContent = q.question;
+
+        // Past status badge
+        const badge = document.getElementById("quiz-q-history-badge");
+        if (rec.status === "correct") {
+          badge.textContent = "前回：正解済み";
+          badge.className = "text-xs px-2.5 py-0.5 rounded-full bg-matchaPale text-matcha font-medium";
+        } else if (rec.status === "wrong") {
+          badge.textContent = "前回：誤答";
+          badge.className = "text-xs px-2.5 py-0.5 rounded-full bg-shuPale text-shu font-medium";
+        } else {
+          badge.textContent = "初挑戦";
+          badge.className = "text-xs px-2.5 py-0.5 rounded-full bg-stone-100 text-rikyu";
+        }
+
+        this.updateBookmarkButtonUI(rec.bookmarked);
+
+        // Choices rendering
+        const choicesContainer = document.getElementById("quiz-choices");
+        choicesContainer.innerHTML = "";
+        const labels = ["イ", "ロ", "ハ", "ニ"];
+
+        const alreadySelectedIdx = session.answeredInSession[q.id];
+        const isAnswered = alreadySelectedIdx !== undefined;
+
+        q.choices.forEach((choiceText, idx) => {
+          const btn = document.createElement("button");
+          btn.disabled = isAnswered;
+
+          let btnStyle = "border-stone-300 bg-washi/60 text-sumi";
+          let badgeStyle = "bg-stone-200 text-sumi";
+
+          if (isAnswered) {
+            if (idx === q.answer) {
+              btnStyle = "border-matcha bg-matchaPale/90 text-matcha font-bold ring-2 ring-matcha/30";
+              badgeStyle = "bg-matcha text-washi";
+            } else if (idx === alreadySelectedIdx && idx !== q.answer) {
+              btnStyle = "border-shu bg-shuPale/90 text-shu font-medium";
+              badgeStyle = "bg-shu text-washi";
+            } else {
+              btnStyle = "border-stone-200 bg-stone-50 text-stone-400 opacity-75";
+              badgeStyle = "bg-stone-200 text-stone-400";
+            }
+          }
+
+          btn.className = `choice-btn w-full text-left p-4 rounded-xl border ${btnStyle} flex items-start gap-3.5`;
+          btn.onclick = () => this.selectAnswer(idx);
+
+          btn.innerHTML = `
+            <span class="w-7 h-7 rounded-lg ${badgeStyle} font-mincho font-bold text-sm flex items-center justify-center shrink-0 mt-0.5">
+              ${labels[idx]}
+            </span>
+            <span class="text-sm sm:text-base leading-relaxed">${choiceText}</span>
+          `;
+          choicesContainer.appendChild(btn);
+        });
+
+        // Explanation visibility
+        const expBox = document.getElementById("quiz-explanation-box");
+        if (isAnswered) {
+          this.showExplanationUI(q, alreadySelectedIdx);
+        } else {
+          expBox.classList.add("hidden");
+        }
+      },
+
+      selectAnswer(choiceIndex) {
+        const session = this.quizSession;
+        const q = session.questions[session.currentIndex];
+        if (!q || session.answeredInSession[q.id] !== undefined) return;
+
+        session.answeredInSession[q.id] = choiceIndex;
+        session.answeredCount++;
+
+        const isCorrect = choiceIndex === q.answer;
+        if (isCorrect) {
+          session.correctCount++;
+          this.setRecord(q.id, { status: "correct" });
+        } else {
+          this.setRecord(q.id, { status: "wrong" });
+        }
+
+        this.renderCurrentQuestion();
+      },
+
+      showExplanationUI(q, selectedIdx) {
+        const expBox = document.getElementById("quiz-explanation-box");
+        const banner = document.getElementById("quiz-result-banner");
+        const isCorrect = selectedIdx === q.answer;
+
+        expBox.classList.remove("hidden", "border-matcha", "bg-matchaPale/30", "border-shu", "bg-shuPale/30");
+
+        if (isCorrect) {
+          expBox.classList.add("border-matcha", "bg-matchaPale/30");
+          banner.className = "font-mincho text-lg font-bold text-matcha flex items-center gap-2";
+          banner.innerHTML = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-matcha text-washi text-sm">◎</span> お見事！正解です`;
+        } else {
+          expBox.classList.add("border-shu", "bg-shuPale/30");
+          banner.className = "font-mincho text-lg font-bold text-shu flex items-center gap-2";
+          banner.innerHTML = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-shu text-washi text-sm">×</span> 惜しい、不正解です`;
+        }
+
+        document.getElementById("quiz-correct-answer-text").textContent = q.choices[q.answer];
+        document.getElementById("quiz-explanation-text").textContent = q.explanation;
+
+        const btnPrev = document.getElementById("btn-prev-q");
+        btnPrev.disabled = this.quizSession.currentIndex === 0;
+
+        const btnNext = document.getElementById("btn-next-q");
+        if (this.quizSession.currentIndex === this.quizSession.questions.length - 1) {
+          btnNext.textContent = "合否・稽古結果を見る →";
+        } else {
+          btnNext.textContent = "次の問題へ進む →";
+        }
+      },
+
+      nextQuestion() {
+        const session = this.quizSession;
+        if (session.currentIndex < session.questions.length - 1) {
+          session.currentIndex++;
+          this.renderCurrentQuestion();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          this.showQuizResult();
+        }
+      },
+
+      prevQuestion() {
+        const session = this.quizSession;
+        if (session.currentIndex > 0) {
+          session.currentIndex--;
+          this.renderCurrentQuestion();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      },
+
+      toggleCurrentBookmark() {
+        const session = this.quizSession;
+        const q = session.questions[session.currentIndex];
+        if (!q) return;
+        const rec = this.getRecord(q.id);
+        const nextVal = !rec.bookmarked;
+        this.setRecord(q.id, { bookmarked: nextVal });
+        this.updateBookmarkButtonUI(nextVal);
+      },
+
+      updateBookmarkButtonUI(isBookmarked) {
+        const btn = document.getElementById("btn-bookmark-toggle");
+        const icon = document.getElementById("bookmark-icon");
+        const label = document.getElementById("bookmark-label");
+        if (isBookmarked) {
+          btn.className = "px-3 py-1.5 rounded-lg border border-kincha bg-kinchaPale text-kincha text-xs sm:text-sm font-bold flex items-center gap-1.5 transition";
+          icon.textContent = "★";
+          label.textContent = "しおり登録済";
+        } else {
+          btn.className = "px-3 py-1.5 rounded-lg border border-stone-300 bg-white text-rikyu hover:text-sumi text-xs sm:text-sm font-medium flex items-center gap-1.5 transition";
+          icon.textContent = "☆";
+          label.textContent = "要復習しおり";
+        }
+      },
+
+      showQuizResult() {
+        this.stopTimer();
+        const session = this.quizSession;
+        const total = session.questions.length;
+        const correct = session.correctCount;
+        const rate = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+        // Save best mock score if applicable
+        if (session.isMockExam && ["mock1", "mock2", "mock_shuffle"].includes(session.modeKey)) {
+          const prevBest = this.state.mockBestScores[session.modeKey];
+          if (prevBest === null || correct > prevBest) {
+            this.state.mockBestScores[session.modeKey] = correct;
+            this.saveState();
+          }
+        }
+
+        document.getElementById("result-mode-label").textContent = session.modeTitle;
+        document.getElementById("result-total").textContent = `${total}問`;
+        document.getElementById("result-correct").textContent = `${correct}問`;
+        document.getElementById("result-rate").textContent = `${rate}%`;
+
+        const seal = document.getElementById("result-seal");
+        const heading = document.getElementById("result-title-heading");
+        let comment = "";
+
+        if (rate === 100) {
+          seal.textContent = "極";
+          seal.className = "inline-flex items-center justify-center w-16 h-16 rounded-full bg-kinchaPale text-kincha font-mincho text-2xl font-bold border border-kincha";
+          heading.textContent = "満点合格・皆伝の域です！";
+          comment = "全問正解、誠にお見事です！茶道文化検定3級の知識が隅々まで身についておられます。自信を持って本試験にお臨みください。";
+        } else if (rate >= 70) {
+          seal.textContent = "合";
+          seal.className = "inline-flex items-center justify-center w-16 h-16 rounded-full bg-matchaPale text-matcha font-mincho text-2xl font-bold border border-matcha";
+          heading.textContent = "合格基準（70%以上）達成！";
+          comment = `合格ラインを見事にクリアされました！間違えた${total - correct}問の達人解説を振り返れば、本試験でもさらに高得点が狙えます。`;
+        } else {
+          seal.textContent = "稽";
+          seal.className = "inline-flex items-center justify-center w-16 h-16 rounded-full bg-shuPale text-shu font-mincho text-2xl font-bold border border-shu/40";
+          heading.textContent = "合格ライン（70%）まであと一歩";
+          comment = "茶の湯の学びは日々の積み重ねです。下の分野別結果から手薄な分野を確認し、今回間違えた問題を解き直してみましょう。";
+        }
+        document.getElementById("result-comment").textContent = comment;
+
+        // Category breakdown in session
+        const breakdownEl = document.getElementById("result-category-breakdown");
+        const catStats = {};
+        session.questions.forEach(q => {
+          if (!catStats[q.category]) catStats[q.category] = { total: 0, correct: 0 };
+          catStats[q.category].total++;
+          if (session.answeredInSession[q.id] === q.answer) {
+            catStats[q.category].correct++;
+          }
+        });
+
+        let breakdownHTML = `<div class="text-xs font-bold text-sumi mb-2">今回の分野別正答状況</div>`;
+        Object.keys(catStats).forEach(catName => {
+          const st = catStats[catName];
+          const cPct = Math.round((st.correct / st.total) * 100);
+          breakdownHTML += `
+            <div class="space-y-1">
+              <div class="flex justify-between text-xs">
+                <span class="text-sumi font-medium">${catName}</span>
+                <span class="${cPct >= 70 ? 'text-matcha font-bold' : 'text-shu font-medium'}">${st.correct} / ${st.total}問 (${cPct}%)</span>
+              </div>
+              <div class="w-full h-1.5 bg-stone-200 rounded-full overflow-hidden">
+                <div class="h-full ${cPct >= 70 ? 'bg-matcha' : 'bg-kincha'}" style="width: ${cPct}%"></div>
+              </div>
+            </div>
+          `;
+        });
+        breakdownEl.innerHTML = breakdownHTML;
+
+        const wrongInSession = session.questions.filter(q => session.answeredInSession[q.id] !== q.answer);
+        const btnRetryWrong = document.getElementById("btn-retry-session-wrong");
+        if (wrongInSession.length > 0) {
+          btnRetryWrong.classList.remove("hidden");
+          btnRetryWrong.textContent = `今回間違えた${wrongInSession.length}問を復習する`;
+        } else {
+          btnRetryWrong.classList.add("hidden");
+        }
+
+        this.showView("result");
+      },
+
+      retryWrongInSession() {
+        const session = this.quizSession;
+        const wrongQuestions = session.questions.filter(q => session.answeredInSession[q.id] !== q.answer);
+        if (wrongQuestions.length === 0) return;
+
+        this.quizSession = {
+          modeKey: "retry_wrong",
+          modeTitle: "直前の誤答 復習稽古",
+          isMockExam: false,
+          questions: wrongQuestions,
+          currentIndex: 0,
+          answeredInSession: {},
+          correctCount: 0,
+          answeredCount: 0
+        };
+        this.showView("quiz");
+        this.renderCurrentQuestion();
+      },
+
+      // ==================== DICTIONARY MODE ====================
+      toggleAllDictExplanations() {
+        this.dictShowAllExplanations = !this.dictShowAllExplanations;
+        const btn = document.getElementById("btn-toggle-all-dict");
+        btn.textContent = this.dictShowAllExplanations ? "すべての正解・解説を閉じる" : "すべての正解・解説を表示する";
+        this.renderDictionary();
+      },
+
+      renderDictionary() {
+        const keyword = (document.getElementById("dict-search")?.value || "").trim().toLowerCase();
+        const catFilter = document.getElementById("dict-category")?.value || "all";
+        const examSetFilter = document.getElementById("dict-examset")?.value || "all";
+        const statusFilter = document.getElementById("dict-status")?.value || "all";
+
+        const filtered = QUESTIONS_DATA.filter(q => {
+          if (catFilter !== "all" && q.category !== catFilter) return false;
+          if (examSetFilter !== "all" && String(q.examSet) !== examSetFilter) return false;
+          const rec = this.getRecord(q.id);
+          if (statusFilter === "unanswered" && rec.status) return false;
+          if (statusFilter === "correct" && rec.status !== "correct") return false;
+          if (statusFilter === "wrong" && rec.status !== "wrong") return false;
+          if (statusFilter === "bookmarked" && !rec.bookmarked) return false;
+
+          if (keyword) {
+            const hay = `${q.question} ${q.choices.join(" ")} ${q.explanation} ${q.category}`.toLowerCase();
+            if (!hay.includes(keyword)) return false;
+          }
+          return true;
+        });
+
+        document.getElementById("dict-count-label").textContent = `全160問中 ${filtered.length}問を表示中`;
+
+        const list = document.getElementById("dict-list");
+        list.innerHTML = "";
+
+        filtered.forEach(q => {
+          const rec = this.getRecord(q.id);
+          let statusBadge = `<span class="text-[11px] px-2 py-0.5 rounded bg-stone-100 text-rikyu">未解答</span>`;
+          if (rec.status === "correct") {
+            statusBadge = `<span class="text-[11px] px-2 py-0.5 rounded bg-matchaPale text-matcha font-bold">◎ 正解済</span>`;
+          } else if (rec.status === "wrong") {
+            statusBadge = `<span class="text-[11px] px-2 py-0.5 rounded bg-shuPale text-shu font-bold">× 誤答</span>`;
+          }
+
+          const card = document.createElement("div");
+          card.className = "bg-white rounded-xl japanese-border p-4 sm:p-5 space-y-3";
+
+          const expHiddenClass = this.dictShowAllExplanations ? "" : "hidden";
+
+          card.innerHTML = `
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="font-mincho font-bold text-xs px-2.5 py-1 rounded bg-sumi text-washi">第${q.id}問</span>
+                <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-washiDark text-sumi">${q.category}</span>
+                <span class="text-[11px] px-2 py-0.5 rounded border border-kincha/40 text-kincha">第${q.examSet}回模試</span>
+                ${statusBadge}
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="app.toggleDictBookmark(${q.id})" class="text-xs px-2.5 py-1 rounded border ${rec.bookmarked ? 'border-kincha bg-kinchaPale text-kincha font-bold' : 'border-stone-200 text-rikyu hover:text-sumi'}">
+                  ${rec.bookmarked ? '★ しおり' : '☆ しおり'}
+                </button>
+                <button onclick="app.startQuiz('all', ${q.id})" class="text-xs px-2.5 py-1 rounded bg-matcha text-washi hover:bg-matchaLight transition">
+                  この問題を解く
+                </button>
+              </div>
+            </div>
+
+            <div class="font-mincho font-bold text-sm sm:text-base text-sumi leading-relaxed cursor-pointer" onclick="document.getElementById('dict-exp-${q.id}').classList.toggle('hidden')">
+              ${q.question}
+              <span class="text-xs font-sans font-normal text-matcha ml-2 underline">[解説を開閉]</span>
+            </div>
+
+            <div id="dict-exp-${q.id}" class="${expHiddenClass} bg-washi rounded-lg p-3.5 border border-stone-200 space-y-1.5 text-xs sm:text-sm">
+              <div class="font-bold text-matcha">正解：${q.choices[q.answer]}</div>
+              <div class="text-rikyu text-xs">選択肢：${q.choices.map((c, i) => `(${['イ','ロ','ハ','ニ'][i]}) ${c}`).join(' ／ ')}</div>
+              <p class="text-sumi leading-relaxed pt-1 border-t border-stone-200/80">${q.explanation}</p>
+            </div>
+          `;
+          list.appendChild(card);
+        });
+      },
+
+      toggleDictBookmark(qId) {
+        const rec = this.getRecord(qId);
+        this.setRecord(qId, { bookmarked: !rec.bookmarked });
+        this.renderDictionary();
+      },
+
+      openResetModal() {
+        document.getElementById("modal-reset").classList.remove("hidden");
+      },
+
+      closeResetModal() {
+        document.getElementById("modal-reset").classList.add("hidden");
+      },
+
+      confirmReset() {
+        this.state.records = {};
+        this.state.mockBestScores = { mock1: null, mock2: null, mock_shuffle: null };
+        this.saveState();
+        this.closeResetModal();
+        this.renderDashboard();
+      }
+    };
+
+    window.addEventListener("DOMContentLoaded", () => {
+      app.init();
+    });
+  </script>
+</body>
+</html>
